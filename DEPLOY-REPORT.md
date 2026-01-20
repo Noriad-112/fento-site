@@ -1,4 +1,4 @@
-# Deploy Report — Fento Site
+# Deploy Report — Copilot Ventures Site
 
 ## Build status
 - Lint: pass (eslint)
@@ -26,5 +26,5 @@
 
 ## Outstanding issues / TODOs
 - Repo write permissions: local builds require elevated permissions to write `.next`.
-  - Recommended: ensure `/home/basecamp_noriad/dev/fento-site` is writable by the current user to avoid needing sudo.
+  - Recommended: ensure the project directory is writable by the current user to avoid needing sudo.
 - Copy polish and real opening hours remain TODOs in content (not blocking deploy).
