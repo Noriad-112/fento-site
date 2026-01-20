@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/cn";
-import { site } from "@/lib/site";
+import { site } from "@/content/site";
 import { Container } from "@/components/ui/Container";
 
 export function Header() {
@@ -20,7 +20,7 @@ export function Header() {
             href="/"
             className="font-serif text-xl font-semibold text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-white/80"
           >
-            {site.siteName}
+            {site.name}
           </Link>
           <span className="hidden text-xs uppercase tracking-[0.32em] text-slate-500 sm:inline">
             {site.tagline}
@@ -28,7 +28,7 @@ export function Header() {
         </div>
         <nav aria-label="Primary" className="hidden md:block">
           <ul className="flex items-center gap-6 text-sm text-slate-700">
-            {site.navItems.map((item) => {
+            {site.nav.map((item) => {
               const isActive = pathname === item.href;
               return (
                 <li key={item.href}>
@@ -73,7 +73,7 @@ export function Header() {
       >
         <Container className="py-5">
           <ul className="flex flex-col gap-3 text-sm text-slate-700">
-            {site.navItems.map((item) => {
+            {site.nav.map((item) => {
               const isActive = pathname === item.href;
               return (
                 <li key={item.href}>

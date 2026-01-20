@@ -1,39 +1,63 @@
-import { site } from "@/lib/site";
+import { site } from "@/content/site";
 
 type SiteConfig = typeof site;
 
-export function getOrganizationId(config: SiteConfig) {
-  return `${config.siteUrl}#organization`;
-}
+const dayOfWeekMap: Record<string, string> = {
+  Monday: "https://schema.org/Monday",
+  Tuesday: "https://schema.org/Tuesday",
+  Wednesday: "https://schema.org/Wednesday",
+  Thursday: "https://schema.org/Thursday",
+  Friday: "https://schema.org/Friday",
+  Saturday: "https://schema.org/Saturday",
+  Sunday: "https://schema.org/Sunday",
+};
 
-export function createOrganizationJsonLd(config: SiteConfig) {
+export function createRestaurantJsonLd(config: SiteConfig) {
   const sameAs = Object.values(config.socials || {}).filter(Boolean);
 
   return {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "@id": getOrganizationId(config),
-    name: config.siteName,
-    url: config.siteUrl,
-    description: config.description,
-    // TODO: Replace with a real logo when available.
-    logo: `${config.siteUrl}/logo.png`,
-    contactPoint: [
-      {
-        "@type": "ContactPoint",
-        email: config.contactEmail,
-        contactType: "business",
+    "@graph": config.locations.map((location) => ({
+      "@type": "Restaurant",
+      "@id": `${config.siteUrl}#${location.slug}`,
+      name: location.name,
+      url: config.siteUrl,
+      description: config.description,
+      servesCuisine: config.servesCuisine,
+      priceRange: config.priceRange,
+      ...(sameAs.length > 0 ? { sameAs } : {}),
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: location.address.street,
+        postalCode: location.address.postalCode,
+        addressLocality: location.address.city,
+        addressCountry: location.address.country,
       },
-    ],
-    ...(sameAs.length > 0 ? { sameAs } : {}),
+      suitableForDiet: config.dietarySchema,
+      openingHoursSpecification: location.openingHours.map((entry) => ({
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: dayOfWeekMap[entry.day] ?? entry.day,
+        opens: entry.opens,
+        closes: entry.closes,
+      })),
+      hasMenu: {
+        "@type": "Menu",
+        name: config.pages.menu.title,
+        description: config.pages.menu.menuDescription,
+        url: `${config.siteUrl}${config.pages.menu.menuUrl}`,
+      },
+    })),
   };
 }
 
-export function createWebPageJsonLd(config: SiteConfig, options: {
-  title: string;
-  description: string;
-  path: string;
-}) {
+export function createWebPageJsonLd(
+  config: SiteConfig,
+  options: {
+    title: string;
+    description: string;
+    path: string;
+  }
+) {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -41,52 +65,7 @@ export function createWebPageJsonLd(config: SiteConfig, options: {
     url: `${config.siteUrl}${options.path}`,
     description: options.description,
     isPartOf: {
-      "@id": getOrganizationId(config),
-    },
-  };
-}
-
-export function createContactPageJsonLd(config: SiteConfig, options: {
-  title: string;
-  description: string;
-  path: string;
-}) {
-  return {
-    "@context": "https://schema.org",
-    "@type": ["WebPage", "ContactPage"],
-    name: options.title,
-    url: `${config.siteUrl}${options.path}`,
-    description: options.description,
-    isPartOf: {
-      "@id": getOrganizationId(config),
-    },
-    potentialAction: {
-      "@type": "ContactAction",
-      target: `${config.siteUrl}${options.path}`,
-      agent: {
-        "@id": getOrganizationId(config),
-      },
-      description:
-        "Use this form to contact Copilot Ventures about advisory work.",
-    },
-  };
-}
-
-export function createPersonJsonLd(config: SiteConfig, options: {
-  name: string;
-  description: string;
-  path: string;
-  jobTitle: string;
-}) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: options.name,
-    description: options.description,
-    jobTitle: options.jobTitle,
-    url: `${config.siteUrl}${options.path}`,
-    worksFor: {
-      "@id": getOrganizationId(config),
+      "@id": `${config.siteUrl}#${config.name}`,
     },
   };
 }

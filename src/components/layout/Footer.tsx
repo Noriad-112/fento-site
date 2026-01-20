@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { site } from "@/lib/site";
+import { site } from "@/content/site";
 import { Container } from "@/components/ui/Container";
 
 export function Footer() {
@@ -11,17 +11,17 @@ export function Footer() {
       <Container className="flex flex-col gap-6 py-10 text-sm text-slate-600 md:flex-row md:items-center md:justify-between">
         <div className="space-y-2">
           <p className="font-serif text-base text-slate-900">
-            {site.siteName}
+            {site.name}
           </p>
           <p className="text-xs uppercase tracking-[0.24em] text-slate-500">
             {site.tagline}
           </p>
           <p className="text-xs text-slate-500">
-            © {year} {site.siteName}. All rights reserved.
+            © {year} {site.name}. All rights reserved.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.2em] text-slate-500">
-          {site.navItems.map((item) => (
+          {site.nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -30,7 +30,6 @@ export function Footer() {
               {item.label}
             </Link>
           ))}
-          <span className="text-slate-400">Imprint</span>
         </div>
       </Container>
     </footer>
