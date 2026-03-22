@@ -60,6 +60,7 @@ export default function MenuPage() {
             Last updated: {dateFormatter.format(new Date(menu.lastUpdated))}.{" "}
             {menu.note}
           </p>
+          <p className="text-sm text-slate-600">{menu.ingredientsSourceNote}</p>
         </div>
       </Section>
       <Section>
@@ -77,19 +78,38 @@ export default function MenuPage() {
               </p>
               <ul className="mt-3 space-y-2">
                 {section.items.map((item) => (
-                  <li
-                    key={item.name}
-                    className="flex items-start justify-between gap-4 leading-relaxed"
-                  >
-                    <span>{item.name}</span>
-                    <span className="font-medium text-slate-900">
-                      {euroFormatter.format(item.price)}
-                    </span>
+                  <li key={item.name} className="space-y-1 leading-relaxed">
+                    <div className="flex items-start justify-between gap-4">
+                      <span>{item.name}</span>
+                      <span className="font-medium text-slate-900">
+                        {euroFormatter.format(item.price)}
+                      </span>
+                    </div>
+                    {item.details ? (
+                      <p className="text-xs leading-relaxed text-slate-500">
+                        {item.details}
+                      </p>
+                    ) : null}
                   </li>
                 ))}
               </ul>
             </div>
           ))}
+        </div>
+      </Section>
+      <Section variant="muted">
+        <div className="space-y-4">
+          <h2 className="font-serif text-2xl text-slate-900">House-Made Sauces</h2>
+          <ul className="grid gap-2 text-sm text-slate-700 sm:grid-cols-2 lg:grid-cols-3">
+            {menu.houseMadeSauces.map((sauce) => (
+              <li
+                key={sauce}
+                className="rounded-xl border border-slate-200/70 bg-white/80 px-3 py-2"
+              >
+                {sauce}
+              </li>
+            ))}
+          </ul>
         </div>
       </Section>
     </>
