@@ -103,10 +103,13 @@ export default function MenuPage() {
           <ul className="grid gap-2 text-sm text-slate-700 sm:grid-cols-2 lg:grid-cols-3">
             {menu.houseMadeSauces.map((sauce) => (
               <li
-                key={sauce}
+                key={sauce.name}
                 className="rounded-xl border border-slate-200/70 bg-white/80 px-3 py-2"
               >
-                {sauce}
+                <p className="font-medium text-slate-900">{sauce.name}</p>
+                <p className="mt-1 text-xs leading-relaxed text-slate-500">
+                  {sauce.ingredients}
+                </p>
               </li>
             ))}
           </ul>

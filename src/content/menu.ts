@@ -4,12 +4,36 @@ export const menu = {
   ingredientsSourceNote:
     "Ingredient lines for bowls and burritos are based on the archived legacy print menu.",
   houseMadeSauces: [
-    "Cashew Crema",
-    "Red Salsa",
-    "Salsa Verde",
-    "Mango Hot Sauce",
-    "Guacamole",
-    "Bean Puree",
+    {
+      name: "Cashew Crema",
+      ingredients:
+        "Cashew nuts, nutritional yeast, lime juice, chipotle peppers in adobo, garlic, salt.",
+    },
+    {
+      name: "Red Salsa",
+      ingredients:
+        "Tomato pulp, fresh tomatoes, white onion, cilantro, spring onion, lime, jalapeno, habanero, garlic, salt.",
+    },
+    {
+      name: "Salsa Verde",
+      ingredients:
+        "Tomatillo, white onion, cilantro, lime juice, jalapeno, habanero, garlic, salt.",
+    },
+    {
+      name: "Mango Hot Sauce",
+      ingredients:
+        "Mango, habanero pepper, yellow pickle juice, orange juice, agave, salt.",
+    },
+    {
+      name: "Guacamole",
+      ingredients:
+        "Avocado, cilantro, lime juice, white onion, jalapeno, habanero, garlic, salt.",
+    },
+    {
+      name: "Bean Puree",
+      ingredients:
+        "Black beans, lime, chipotle peppers in adobo, white onion, garlic, oregano, sunflower oil, salt.",
+    },
   ],
   sections: [
     {
@@ -21,19 +45,19 @@ export const menu = {
           name: "Fento Bowl",
           price: 13.5,
           details:
-            "Black beans | Mixed seasonal greens | Roasted tomato salsa | Bio corn chips | Cashew Crema | Lime or turmeric pickles | Coriander",
+            "Black beans, mixed greens, sweet potato, red salsa, cashew crema, pickles, coriander.",
         },
         {
           name: "Super Bowl",
           price: 18.5,
           details:
-            "Black beans | Mixed seasonal greens | Roasted sweet potato | Turkish feta | Roasted tomato salsa | Cashew Crema | Lime or turmeric pickles | Coriander",
+            "Bowl base with black beans, mixed greens, sweet potato, red salsa, cashew crema, plus mushroom/chicken add-ons.",
         },
         {
           name: "Seasonal Bowl",
           price: 16.5,
           details:
-            "Ask staff for current seasonal ingredients and available add-ons.",
+            "Rotating seasonal vegetables with black beans, salsa, cashew crema, pickles, and greens.",
         },
       ],
     },
@@ -42,9 +66,24 @@ export const menu = {
       description:
         "Tortilla chips with house-made toppings and a choice of plant-based or chicken variations.",
       items: [
-        { name: "Regular/Vegan Nachos", price: 13.5, details: "" },
-        { name: "Sweet Potato Party Nacho", price: 14.5, details: "" },
-        { name: "Chicken Nacho", price: 15.5, details: "" },
+        {
+          name: "Regular/Vegan Nachos",
+          price: 13.5,
+          details:
+            "Tortilla chips, black beans, red salsa, cashew crema, pickles, coriander.",
+        },
+        {
+          name: "Sweet Potato Party Nacho",
+          price: 14.5,
+          details:
+            "Tortilla chips, black beans, sweet potato, red salsa, cashew crema, pickles, coriander.",
+        },
+        {
+          name: "Chicken Nacho",
+          price: 15.5,
+          details:
+            "Tortilla chips, black beans, chicken, red salsa, cashew crema, pickles, coriander.",
+        },
       ],
     },
     {
@@ -56,19 +95,19 @@ export const menu = {
           name: "Vegan/Vegetarian",
           price: 14.5,
           details:
-            "Soft tortilla wrap | Black bean puree | Brown rice & black beans | Roasted sweet potato | Mixed seasonal greens | Roasted tomato salsa | Cashew Crema | Lime or turmeric pickles | Coriander",
+            "Soft tortilla wrap, bean puree, brown rice and black beans, sweet potato, mixed greens, red salsa, cashew crema, pickles, coriander.",
         },
         {
           name: "Local Mushrooms",
           price: 14.0,
           details:
-            "Burrito base ingredients with local mushrooms added.",
+            "Burrito base with shiitake mushrooms, jalapeno, bell pepper, oregano, zaatar, and onion.",
         },
         {
           name: "Local Free Range Chicken",
           price: 16.0,
           details:
-            "Burrito base ingredients with local free-range chicken added.",
+            "Burrito base with marinated chicken, lime juice, paprika, oregano, sunflower oil, and salt.",
         },
       ],
     },
@@ -98,8 +137,16 @@ export const menu = {
       title: "Fresh Juices",
       description: "Daily fresh juice choices prepared in-house.",
       items: [
-        { name: "Lite n' Stormy", price: 5.0, details: "" },
-        { name: "Strawberry Hibiscus", price: 5.0, details: "" },
+        {
+          name: "Lite n' Stormy",
+          price: 5.0,
+          details: "Ginger juice, apple juice, lime juice, agave, cold water.",
+        },
+        {
+          name: "Strawberry Hibiscus",
+          price: 5.0,
+          details: "Frozen strawberries, hibiscus flowers, water, agave.",
+        },
       ],
     },
   ],
