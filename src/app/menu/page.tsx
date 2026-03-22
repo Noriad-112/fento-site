@@ -72,6 +72,9 @@ export default function MenuPage() {
               <p className="font-serif text-lg text-slate-900">
                 {section.title}
               </p>
+              <p className="mt-2 text-xs leading-relaxed text-slate-500">
+                {section.description}
+              </p>
               <ul className="mt-3 space-y-2">
                 {section.items.map((item) => (
                   <li
