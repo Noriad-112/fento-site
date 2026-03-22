@@ -26,12 +26,7 @@ export function ButtonLink({
 
   if (isExternal) {
     return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={cn(base, styles, className)}
-      >
+      <a href={href} className={cn(base, styles, className)}>
         {children}
       </a>
     );

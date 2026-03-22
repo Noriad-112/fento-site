@@ -32,8 +32,6 @@ export function Footer() {
           ))}
           <a
             href={site.socials.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
             className="transition-colors hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--surface)]"
           >
             Instagram
