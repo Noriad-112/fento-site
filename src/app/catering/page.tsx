@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { ButtonLink } from "@/components/ui/ButtonLink";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -32,9 +33,14 @@ export default function CateringPage() {
         />
       </Section>
       <Section>
-        <p className="max-w-2xl text-base text-slate-600">
-          {site.pages.catering.cta}
-        </p>
+        <div className="space-y-4">
+          <p className="max-w-2xl text-base text-slate-600">
+            {site.pages.catering.cta}
+          </p>
+          <ButtonLink href={site.pages.catering.inquiryCta.href}>
+            {site.pages.catering.inquiryCta.label}
+          </ButtonLink>
+        </div>
       </Section>
     </>
   );

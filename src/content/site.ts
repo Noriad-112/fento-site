@@ -1,6 +1,6 @@
 export const site = {
   name: "Fento",
-  siteUrl: "https://fento-site-draft.vercel.app",
+  siteUrl: "https://www.thefento.com",
   description:
     "Fento serves Mexican-inspired food built from a fully plant-based foundation. Every dish starts vegan, with optional additions of dairy or chicken. All sauces are made in-house without preservatives, and nearly the entire menu is gluten-free.",
   tagline: "Vegan-built Mexican fusion in Amsterdam",
@@ -19,7 +19,6 @@ export const site = {
     { label: "Story", href: "/story" },
     { label: "Visit", href: "/visit" },
     { label: "Catering", href: "/catering" },
-    { label: "Journal", href: "/journal" },
   ],
   locations: [
     {
@@ -106,13 +105,13 @@ export const site = {
         "Vegan-built menu",
         "Dairy-free options available",
         "Gluten-free options available",
-        "Only one item contains gluten (burrito)",
+        "Ask staff for current gluten-containing items",
       ],
       glutenDisclaimer:
-        "With the exception of the burrito, our menu is gluten-free. We work carefully, but cross-contamination is always possible.",
+        "We work carefully, but cross-contamination is always possible. Please check with staff for the latest allergen details.",
       menuUrl: "/menu",
       menuDescription:
-        "A plant-based core menu with bowls, tacos, sides, and a single gluten-containing burrito option.",
+        "A plant-based core menu with nachos, burritos, bowls, quesadillas, and fresh juices.",
     },
     story: {
       title: "Story",
@@ -134,10 +133,11 @@ export const site = {
       headline: "Catering, events, and collaborations",
       copy:
         "Fento offers catering for offices, private events, and collaborations within De Hallen and the surrounding neighborhood. Our menu adapts well to dietary needs, including vegan and gluten-aware requirements.",
-      cta: "Contact us to discuss options and availability.",
-    },
-    journal: {
-      title: "Journal",
+      cta: "Share your date, group size, and dietary requirements and we will propose an option.",
+      inquiryCta: {
+        label: "Send inquiry on Instagram",
+        href: "https://instagram.com/fento",
+      },
     },
   },
 };

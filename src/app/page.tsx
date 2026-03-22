@@ -46,6 +46,9 @@ export default function Home() {
               <ButtonLink href={site.pages.home.primaryCta.href}>
                 {site.pages.home.primaryCta.label}
               </ButtonLink>
+              <ButtonLink href={site.socials.instagram}>
+                Message us on Instagram
+              </ButtonLink>
               {site.pages.home.ctas.map((cta) => (
                 <ButtonLink key={cta.label} href={cta.href} variant="secondary">
                   {cta.label}

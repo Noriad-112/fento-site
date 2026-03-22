@@ -7,6 +7,17 @@ import { menu } from "@/content/menu";
 import { site } from "@/content/site";
 import { createWebPageJsonLd } from "@/lib/seo";
 
+const euroFormatter = new Intl.NumberFormat("nl-NL", {
+  style: "currency",
+  currency: "EUR",
+  minimumFractionDigits: 2,
+});
+const dateFormatter = new Intl.DateTimeFormat("nl-NL", {
+  day: "2-digit",
+  month: "long",
+  year: "numeric",
+});
+
 export const metadata: Metadata = {
   title: site.pages.menu.title,
   description: site.pages.menu.philosophy,
@@ -45,6 +56,10 @@ export default function MenuPage() {
           <p className="text-sm text-slate-600">
             {site.pages.menu.glutenDisclaimer}
           </p>
+          <p className="text-sm text-slate-600">
+            Last updated: {dateFormatter.format(new Date(menu.lastUpdated))}.{" "}
+            {menu.note}
+          </p>
         </div>
       </Section>
       <Section>
@@ -57,6 +72,19 @@ export default function MenuPage() {
               <p className="font-serif text-lg text-slate-900">
                 {section.title}
               </p>
+              <ul className="mt-3 space-y-2">
+                {section.items.map((item) => (
+                  <li
+                    key={item.name}
+                    className="flex items-start justify-between gap-4 leading-relaxed"
+                  >
+                    <span>{item.name}</span>
+                    <span className="font-medium text-slate-900">
+                      {euroFormatter.format(item.price)}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
