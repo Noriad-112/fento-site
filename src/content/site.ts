@@ -66,11 +66,11 @@ export const site = {
       googleMapsUrl:
         "https://www.google.com/maps/search/?api=1&query=Potgieterstraat%2047H%2C%201053%20XS%20Amsterdam%2C%20Netherlands",
       openingHours: [
-        { day: "Wednesday", opens: "10:00", closes: "14:00" },
-        { day: "Thursday", opens: "10:00", closes: "14:00" },
-        { day: "Friday", opens: "10:00", closes: "14:00" },
-        { day: "Saturday", opens: "10:00", closes: "14:00" },
-        { day: "Sunday", opens: "10:00", closes: "14:00" },
+        { day: "Wednesday", opens: "09:00", closes: "15:00" },
+        { day: "Thursday", opens: "09:00", closes: "15:00" },
+        { day: "Friday", opens: "09:00", closes: "15:00" },
+        { day: "Saturday", opens: "09:00", closes: "15:00" },
+        { day: "Sunday", opens: "09:00", closes: "15:00" },
       ],
       cta: {
         label: "Plan a private event",
