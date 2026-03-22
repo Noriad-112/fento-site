@@ -114,12 +114,32 @@ export const menu = {
     {
       title: "Quesadillas",
       description:
-        "Griddled quesadillas with signature kale option and protein add-ons.",
+        "Made with local organic corn tortillas, cheese or vegan cheese, and seasonal fillings.",
       items: [
-        { name: "Kalesadilla", price: 10.5, details: "" },
-        { name: "Vegan Kalesadilla", price: 11.5, details: "" },
-        { name: "Local Mushrooms", price: 13.5, details: "" },
-        { name: "Chicken", price: 13.5, details: "" },
+        {
+          name: "Kalesadilla",
+          price: 10.5,
+          details:
+            "Local organic corn tortilla, kale filling, and cheese.",
+        },
+        {
+          name: "Vegan Kalesadilla",
+          price: 11.5,
+          details:
+            "Local organic corn tortilla, kale filling, and vegan cheese.",
+        },
+        {
+          name: "Local Mushrooms",
+          price: 13.5,
+          details:
+            "Local organic corn tortilla, locally grown shiitake mushrooms, and cheese or vegan cheese.",
+        },
+        {
+          name: "Chicken",
+          price: 13.5,
+          details:
+            "Local organic corn tortilla, EU farm-raised chicken, and cheese or vegan cheese.",
+        },
       ],
     },
     {
