@@ -15,12 +15,27 @@ export function ButtonLink({
   variant = "primary",
   className,
 }: ButtonLinkProps) {
+  const isExternal = href.startsWith("http://") || href.startsWith("https://");
+
   const base =
     "inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--surface-elevated)]";
   const styles =
     variant === "primary"
       ? "bg-[color:var(--accent)] text-white hover:translate-y-[-1px] hover:shadow-lg"
       : "border border-slate-300 text-slate-800 hover:border-slate-400 hover:text-slate-900";
+
+  if (isExternal) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cn(base, styles, className)}
+      >
+        {children}
+      </a>
+    );
+  }
 
   return (
     <Link href={href} className={cn(base, styles, className)}>
