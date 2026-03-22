@@ -11,7 +11,7 @@ export const site = {
     "https://schema.org/GlutenFreeDiet",
   ],
   socials: {
-    instagram: "https://instagram.com/fento",
+    instagram: "https://instagram.com/thefento",
   },
   nav: [
     { label: "Home", href: "/" },
@@ -136,7 +136,7 @@ export const site = {
       cta: "Share your date, group size, and dietary requirements and we will propose an option.",
       inquiryCta: {
         label: "Send inquiry on Instagram",
-        href: "https://instagram.com/fento",
+        href: "https://instagram.com/thefento",
       },
     },
   },
