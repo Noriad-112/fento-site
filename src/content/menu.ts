@@ -93,7 +93,7 @@ export const menu = {
         },
         {
           name: "Local Mushrooms",
-          price: 14.5,
+          price: 16.0,
           details:
             "Burrito base with shiitake mushrooms, jalapeno, bell pepper, oregano, zaatar, and onion.",
         },
