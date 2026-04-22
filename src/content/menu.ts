@@ -32,7 +32,7 @@ export const menu = {
     {
       name: "Bean Puree",
       ingredients:
-        "Black beans, lime, chipotle peppers in adobo, white onion, garlic, oregano, sunflower oil, salt.",
+        "Black beans, spring onions, garlic, olive oil, sunflower seed oil, salt, cumin powder, red onion, carrot.",
     },
   ],
   sections: [
