@@ -43,7 +43,7 @@ export const menu = {
       items: [
         {
           name: "Fento Bowl",
-          price: 13.5,
+          price: 14.5,
           details:
             "Black beans, mixed greens, sweet potato, red salsa, cashew crema, pickles, coriander.",
         },
@@ -52,12 +52,6 @@ export const menu = {
           price: 18.5,
           details:
             "Bowl base with black beans, mixed greens, sweet potato, red salsa, cashew crema, plus mushroom/chicken add-ons.",
-        },
-        {
-          name: "Seasonal Bowl",
-          price: 16.5,
-          details:
-            "Rotating seasonal vegetables with black beans, salsa, cashew crema, pickles, and greens.",
         },
       ],
     },
@@ -99,7 +93,7 @@ export const menu = {
         },
         {
           name: "Local Mushrooms",
-          price: 14.0,
+          price: 14.5,
           details:
             "Burrito base with shiitake mushrooms, jalapeno, bell pepper, oregano, zaatar, and onion.",
         },
@@ -130,7 +124,7 @@ export const menu = {
         },
         {
           name: "Local Mushrooms",
-          price: 13.5,
+          price: 14.5,
           details:
             "Local organic corn tortilla, locally grown shiitake mushrooms, and cheese or vegan cheese.",
         },
@@ -147,7 +141,7 @@ export const menu = {
       description:
         "Add-ons and sauces to customize your order.",
       items: [
-        { name: "Bio Chips & Homemade Salsa", price: 8.0, details: "" },
+        { name: "Bio Chips & Homemade Salsa", price: 6.0, details: "" },
         { name: "Guacamole", price: 3.0, details: "" },
         { name: "Mango Hot Sauce", price: 2.0, details: "" },
         { name: "Local Free Range Chicken", price: 4.0, details: "" },
