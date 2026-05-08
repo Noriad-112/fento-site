@@ -17,7 +17,7 @@ export function SiteShell({ children }: SiteShellProps) {
         Skip to content
       </a>
       <Header />
-      <main id="main-content" className="w-full pb-20 pt-6 sm:pt-10">
+      <main id="main-content" className="w-full pb-20">
         {children}
       </main>
       <Footer />

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -14,18 +15,19 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/60 bg-white/80 backdrop-blur">
-      <Container className="flex items-center justify-between py-5">
-        <div className="flex items-baseline gap-3">
-          <Link
-            href="/"
-            className="font-serif text-xl font-semibold text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-white/80"
-          >
-            {site.name}
-          </Link>
-          <span className="hidden text-xs uppercase tracking-[0.32em] text-slate-500 sm:inline">
-            {site.tagline}
-          </span>
-        </div>
+      <Container className="flex items-center justify-between py-3">
+        <Link
+          href="/"
+          className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-white/80"
+        >
+          <Image
+            src="/logotype-cropped.png"
+            alt={site.name}
+            width={591}
+            height={82}
+            className="h-3 w-auto"
+          />
+        </Link>
         <nav aria-label="Primary" className="hidden md:block">
           <ul className="flex items-center gap-6 text-sm text-slate-700">
             {site.nav.map((item) => {

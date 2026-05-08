@@ -10,10 +10,6 @@
   --surface-elevated: #ffffff;
   --surface-muted: #f2ede6;
   --border-soft: rgba(148, 163, 184, 0.25);
-  --font-body: "Avenir Next", "Futura", "Trebuchet MS", "Helvetica Neue",
-    "Helvetica", "Arial", sans-serif;
-  --font-heading: "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
-    "Georgia", "Times New Roman", serif;
 }
 
 @theme inline {
@@ -28,6 +24,16 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-serif {
+  font-variation-settings: "opsz" 72, "SOFT" 30, "WONK" 1;
+}
+
+h1.font-serif {
+  font-variation-settings: "opsz" 144, "SOFT" 20, "WONK" 1;
+  letter-spacing: -0.02em;
 }
 
 @keyframes marquee {
@@ -38,3 +44,27 @@ body {
 .animate-marquee {
   animation: marquee 24s linear infinite;
 }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease both;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
