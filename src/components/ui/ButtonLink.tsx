@@ -5,7 +5,7 @@ import { cn } from "@/lib/cn";
 type ButtonLinkProps = {
   href: string;
   children: string;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "inverted" | "ghost";
   className?: string;
 };
 
@@ -19,10 +19,13 @@ export function ButtonLink({
 
   const base =
     "inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--surface-elevated)]";
-  const styles =
-    variant === "primary"
-      ? "bg-[color:var(--accent)] text-white hover:translate-y-[-1px] hover:shadow-lg"
-      : "border border-slate-300 text-slate-800 hover:border-slate-400 hover:text-slate-900";
+  const variantStyles: Record<NonNullable<ButtonLinkProps["variant"]>, string> = {
+    primary: "bg-[color:var(--accent)] text-white hover:translate-y-[-1px] hover:shadow-lg",
+    secondary: "border border-slate-300 text-slate-800 hover:border-slate-400 hover:text-slate-900",
+    inverted: "bg-white text-[color:var(--accent)] hover:translate-y-[-1px] hover:shadow-lg",
+    ghost: "border border-white/50 text-white hover:border-white hover:bg-white/10",
+  };
+  const styles = variantStyles[variant ?? "primary"];
 
   if (isExternal) {
     return (

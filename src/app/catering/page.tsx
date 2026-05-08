@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { PageHeader } from "@/components/ui/PageHeader";
+import { PhotoSlot } from "@/components/ui/PhotoSlot";
 import { Section } from "@/components/ui/Section";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { site } from "@/content/site";
@@ -15,6 +16,8 @@ export const metadata: Metadata = {
   },
 };
 
+const OFFER_TAGS = ["Office catering", "Private events", "De Hallen collabs"] as const;
+
 export default function CateringPage() {
   return (
     <>
@@ -25,6 +28,8 @@ export default function CateringPage() {
           path: "/catering",
         })}
       />
+
+      {/* Header */}
       <Section size="loose" className="pt-12 sm:pt-16">
         <PageHeader
           eyebrow={site.tagline}
@@ -32,11 +37,27 @@ export default function CateringPage() {
           description={site.pages.catering.copy}
         />
       </Section>
+
+      {/* Photo + tags + inquiry + CTA */}
       <Section>
-        <div className="space-y-4">
-          <p className="max-w-2xl text-base text-slate-600">
-            {site.pages.catering.cta}
+        <div className="max-w-2xl space-y-8">
+          <PhotoSlot aspectRatio="16/9" alt="Fento catering" />
+
+          <div className="flex flex-wrap gap-2">
+            {OFFER_TAGS.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full bg-[color:var(--accent-soft)] px-4 py-1.5 text-sm font-medium text-[color:var(--accent)]"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <p className="text-sm text-slate-600">
+            Share your date, group size, and dietary requirements and we will propose an option.
           </p>
+
           <ButtonLink href={site.pages.catering.inquiryCta.href}>
             {site.pages.catering.inquiryCta.label}
           </ButtonLink>
