@@ -41,7 +41,7 @@ export default function CateringPage() {
       {/* Photo + tags + inquiry + CTA */}
       <Section>
         <div className="max-w-2xl space-y-8">
-          <PhotoSlot aspectRatio="16/9" alt="Fento catering" />
+          <PhotoSlot aspectRatio="16/9" alt="Fento catering" src="/photos/raw-salad.png" />
 
           <div className="flex flex-wrap gap-2">
             {OFFER_TAGS.map((tag) => (

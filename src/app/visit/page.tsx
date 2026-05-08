@@ -21,6 +21,11 @@ const dayAbbr: Record<string, string> = {
   Thursday: "Thu", Friday: "Fri", Saturday: "Sat", Sunday: "Sun",
 };
 
+const locationPhotos: Record<string, string> = {
+  "fento-foodhallen": "/photos/fento-sign-night.jpg",
+  "sauvage-space": "/photos/staff-counter.jpg",
+};
+
 function groupHours(
   hours: Array<{ day: string; opens: string; closes: string }>
 ): Array<{ label: string; time: string }> {
@@ -65,7 +70,7 @@ export default function VisitPage() {
         <div className="grid gap-10 lg:grid-cols-2">
           {site.locations.map((location) => (
             <div key={location.id} className="space-y-5">
-              <PhotoSlot aspectRatio="3/2" alt={location.name} />
+              <PhotoSlot aspectRatio="3/2" alt={location.name} src={locationPhotos[location.id]} />
               <div className="space-y-4 px-1">
                 {/* Name + address */}
                 <div>

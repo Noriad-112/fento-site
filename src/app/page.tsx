@@ -44,6 +44,11 @@ function compactHours(
 
 const MARQUEE_TEXT = "Vegan-built · In-house sauces · Gluten-aware · Amsterdam";
 
+const locationPhotos: Record<string, string> = {
+  "fento-foodhallen": "/photos/stand-exterior.jpg",
+  "sauvage-space": "/photos/sauvage-interior.jpg",
+};
+
 export default function Home() {
   return (
     <>
@@ -89,7 +94,7 @@ export default function Home() {
         <div className="grid gap-8 lg:grid-cols-2">
           {site.locations.map((location) => (
             <div key={location.id} className="space-y-4">
-              <PhotoSlot aspectRatio="16/9" alt={location.name} />
+              <PhotoSlot aspectRatio="16/9" alt={location.name} src={locationPhotos[location.id]} />
               <div className="space-y-3 px-1">
                 <h2 className="font-serif text-2xl text-slate-900">{location.name}</h2>
                 <p className="text-sm text-slate-500">{compactHours(location.openingHours)}</p>

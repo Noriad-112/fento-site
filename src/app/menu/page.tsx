@@ -19,6 +19,15 @@ const dateFormatter = new Intl.DateTimeFormat("nl-NL", {
   year: "numeric",
 });
 
+const sectionPhotos: Record<string, string> = {
+  Bowls: "/photos/bowl-with-sauces.jpg",
+  Nachos: "/photos/red-salsa.png",
+  Burritos: "/photos/burritos.png",
+  Quesadillas: "/photos/quesadilla-press.jpg",
+  Extra: "/photos/green-glow.png",
+  "Fresh Juices": "/photos/hibiscus-drink.png",
+};
+
 export const metadata: Metadata = {
   title: site.pages.menu.title,
   description: site.pages.menu.philosophy,
@@ -80,7 +89,7 @@ export default function MenuPage() {
               key={section.title}
               className="overflow-hidden rounded-2xl border border-slate-200/70 bg-white/80 text-sm text-slate-700"
             >
-              <PhotoSlot aspectRatio="4/3" alt={section.title} className="rounded-none rounded-t-2xl" />
+              <PhotoSlot aspectRatio="4/3" alt={section.title} src={sectionPhotos[section.title]} className="rounded-none rounded-t-2xl" />
               <div className="p-4">
                 <p className="font-serif text-lg text-slate-900">{section.title}</p>
                 <p className="mt-1 text-xs leading-relaxed text-slate-500">{section.description}</p>
