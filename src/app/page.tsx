@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
-import { HeroBanner } from "@/components/ui/HeroBanner";
-import { PhotoSlot } from "@/components/ui/PhotoSlot";
+import { HomeHero } from "@/components/ui/HomeHero";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Section } from "@/components/ui/Section";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { site } from "@/content/site";
@@ -43,17 +45,20 @@ function compactHours(
   return groups.map(({ label, time }) => `${label} ${time}`).join(" · ");
 }
 
-const MARQUEE_TEXT = "Vegan-built · In-house sauces · Gluten-aware · Amsterdam";
+const MARQUEE_ITEMS = [
+  "Vegan-built",
+  "In-house sauces",
+  "Gluten-aware",
+  "No preservatives",
+  "Plant-forward",
+  "Amsterdam",
+];
 
 const locationPhotos: Record<string, string> = {
   "fento-foodhallen": "/photos/stand-angle.jpg",
   "sauvage-space": "/photos/sauvage-kitchen.jpg",
 };
 
-const locationPhotoPosition: Record<string, string> = {
-  "fento-foodhallen": "center top",
-  "sauvage-space": "center",
-};
 
 export default function Home() {
   return (
@@ -66,64 +71,117 @@ export default function Home() {
         })}
       />
 
-      {/* Hero banner */}
-      <HeroBanner className="py-12 sm:py-16">
-        <p className="animate-fade-up text-xs uppercase tracking-[0.3em] text-[color:var(--accent-soft)]">
-          Amsterdam · Foodhallen
-        </p>
-        <h1 className="animate-fade-up delay-100 mt-3 font-serif text-4xl leading-[1.08] text-white sm:text-5xl lg:text-6xl">
-          Clean, bold, made in-house.
-        </h1>
-        <div className="animate-fade-up delay-200 mt-6 flex flex-wrap gap-3">
-          <ButtonLink href="/menu" variant="inverted">See the menu</ButtonLink>
-          <ButtonLink href="/visit" variant="ghost">Visit us</ButtonLink>
-        </div>
-      </HeroBanner>
+      {/* Hero */}
+      <HomeHero />
 
-      {/* Marquee strip */}
-      <div className="overflow-hidden border-b border-slate-200/50 bg-[color:var(--surface)] py-3">
+      {/* Marquee strip — inverted green band */}
+      <div className="overflow-hidden bg-[color:var(--accent)] py-4">
         <div className="flex whitespace-nowrap animate-marquee">
-          {[MARQUEE_TEXT, MARQUEE_TEXT, MARQUEE_TEXT, MARQUEE_TEXT].map((text, i) => (
-            <span key={i} className="px-12 text-xs uppercase tracking-[0.3em] text-slate-500">
-              {text}
+          {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS, ...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, i) => (
+            <span
+              key={i}
+              className="flex items-center gap-5 px-5 text-[11px] font-medium uppercase tracking-[0.28em] text-white/75"
+            >
+              {item}
+              <span className="text-white/30" aria-hidden="true">✦</span>
             </span>
           ))}
         </div>
       </div>
 
-      {/* Three pillars */}
-      <Section className="py-12 sm:py-16">
-        <div className="grid gap-px border border-slate-200/60 rounded-2xl overflow-hidden bg-slate-200/60 sm:grid-cols-3">
-          {[
-            { num: "01", label: "Plant-built", body: "Every dish starts fully vegan — no animal products in the base, ever." },
-            { num: "02", label: "Made in-house", body: "All sauces are produced daily with no preservatives or shortcuts." },
-            { num: "03", label: "Gluten-aware", body: "Nearly the entire menu is gluten-free. Ask staff for current exceptions." },
-          ].map(({ num, label, body }) => (
-            <div key={num} className="bg-[color:var(--surface)] px-6 py-8 sm:px-8">
-              <p className="font-serif text-[color:var(--accent)] text-xs tracking-[0.25em] uppercase">{num}</p>
-              <p className="mt-3 font-serif text-xl text-slate-900">{label}</p>
-              <p className="mt-2 text-sm leading-relaxed text-slate-500">{body}</p>
+      {/* Three pillars — freely floating pills */}
+      <Section className="py-10 sm:py-4">
+        {/* Mobile: stacked column. Desktop: CSS grid overlap — all pills in col 1 / row 1,
+            aligned with self/justify-self, animated directly (no ScrollReveal wrapper). */}
+        <div className="flex flex-col items-center gap-5 py-4 sm:grid sm:min-h-[360px] sm:gap-0 sm:py-8">
+
+          {/* Plant-built — top left */}
+          <div className="animate-float-pill1 group relative z-10 cursor-default sm:col-start-1 sm:row-start-1 sm:self-start sm:justify-self-start">
+            <div className="rounded-full bg-[color:var(--accent)] px-7 py-4 transition-opacity duration-300 group-hover:opacity-75">
+              <span
+                className="block font-serif text-[clamp(1.6rem,4vw,3rem)] italic leading-none text-white"
+                style={{ fontVariationSettings: '"opsz" 144, "SOFT" 60, "WONK" 0', letterSpacing: '-0.02em' }}
+              >
+                Plant-built
+              </span>
             </div>
-          ))}
+            <p className="absolute left-0 top-full mt-2 max-w-[240px] text-sm leading-relaxed text-slate-500 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+              No animal products in the base — ever. Additions are optional.
+            </p>
+          </div>
+
+          {/* Made in-house — bottom right */}
+          <div className="animate-float-pill2 group relative z-20 cursor-default sm:col-start-1 sm:row-start-1 sm:self-end sm:justify-self-end">
+            <div className="rounded-full bg-[color:var(--accent)] px-9 py-5 transition-opacity duration-300 group-hover:opacity-75">
+              <span
+                className="block font-serif text-[clamp(2rem,5.5vw,4.2rem)] italic leading-none text-white"
+                style={{ fontVariationSettings: '"opsz" 144, "SOFT" 60, "WONK" 0', letterSpacing: '-0.015em' }}
+              >
+                Made in-house
+              </span>
+            </div>
+            <p className="absolute right-0 top-full mt-2 max-w-[240px] text-right text-sm leading-relaxed text-slate-500 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+              Every sauce produced daily. No preservatives, no shortcuts.
+            </p>
+          </div>
+
+          {/* Gluten-aware — center */}
+          <div className="animate-float-pill3 group relative z-10 cursor-default sm:col-start-1 sm:row-start-1 sm:self-center sm:justify-self-center">
+            <div className="rounded-full bg-[color:var(--accent)] px-6 py-3 transition-opacity duration-300 group-hover:opacity-75">
+              <span
+                className="block font-serif text-[clamp(1.3rem,3vw,2.2rem)] italic leading-none text-white"
+                style={{ fontVariationSettings: '"opsz" 144, "SOFT" 60, "WONK" 0', letterSpacing: '-0.015em' }}
+              >
+                Gluten-aware
+              </span>
+            </div>
+            <p className="absolute left-1/2 top-full mt-2 max-w-[240px] -translate-x-1/2 text-center text-sm leading-relaxed text-slate-500 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+              Nearly the whole menu is gluten-free. Ask staff for exceptions.
+            </p>
+          </div>
+
         </div>
       </Section>
 
       {/* Location cards */}
-      <Section className="pt-0">
-        <div className="grid gap-8 lg:grid-cols-2">
-          {site.locations.map((location) => (
-            <div key={location.id} className="space-y-4">
-              <PhotoSlot
-                aspectRatio="4/3"
-                alt={location.name}
-                src={locationPhotos[location.id]}
-                objectPosition={locationPhotoPosition[location.id]}
-              />
-              <div className="space-y-3 px-1">
-                <h2 className="font-serif text-2xl text-slate-900">{location.name}</h2>
-                <p className="text-sm leading-relaxed text-slate-500">{location.shortDescription}</p>
+      <Section variant="muted" className="py-12 sm:py-16">
+        <ScrollReveal className="mb-8 sm:mb-10">
+          <p className="text-[10px] uppercase tracking-[0.4em] text-[color:var(--accent)] opacity-60">
+            Where to find us
+          </p>
+          <h2 className="mt-2 font-serif text-3xl text-slate-900 sm:text-4xl">
+            Two locations.
+          </h2>
+        </ScrollReveal>
+
+        <div className="grid gap-6 lg:grid-cols-2">
+          {site.locations.map((location, i) => (
+            <ScrollReveal
+              key={location.id}
+              delay={i * 80}
+              className="group overflow-hidden rounded-2xl border border-slate-200/60 bg-white"
+            >
+              {/* Photo */}
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={locationPhotos[location.id]}
+                  alt={location.name}
+                  fill
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                />
+              </div>
+
+              {/* Info */}
+              <div className="space-y-3 p-6">
+                <h3 className="font-serif text-2xl text-slate-900 transition-colors duration-200 group-hover:text-[color:var(--accent)]">
+                  {location.name}
+                </h3>
+                <p className="text-sm leading-relaxed text-slate-500">
+                  {location.shortDescription}
+                </p>
                 <p className="text-xs text-slate-400">{compactHours(location.openingHours)}</p>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-3 pt-1">
                   {location.id === "sauvage-space" ? (
                     <>
                       <ButtonLink href="https://sauvage.amsterdam/" variant="secondary">
@@ -140,10 +198,25 @@ export default function Home() {
                   )}
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </Section>
+
+      {/* Bold closing statement strip */}
+      <section className="bg-[color:var(--accent)] py-16 sm:py-22">
+        <Container>
+          <ScrollReveal>
+            <p className="font-serif text-[clamp(1.6rem,3.8vw,3.2rem)] leading-[1.1] text-white/90 max-w-2xl">
+              "Designed vegan from the start. Built for everyone."
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <ButtonLink href="/story" variant="inverted">Our story</ButtonLink>
+              <ButtonLink href="/menu" variant="ghost">See the menu</ButtonLink>
+            </div>
+          </ScrollReveal>
+        </Container>
+      </section>
     </>
   );
 }

@@ -42,7 +42,7 @@ h1.font-serif {
 }
 
 .animate-marquee {
-  animation: marquee 24s linear infinite;
+  animation: marquee 20s linear infinite;
 }
 
 @keyframes fadeUp {
@@ -55,6 +55,18 @@ h1.font-serif {
   to   { opacity: 1; }
 }
 
+/* Word-by-word curtain reveal — parent must be overflow-hidden */
+@keyframes wordReveal {
+  from { transform: translateY(110%); }
+  to   { transform: translateY(0); }
+}
+
+/* Gentle floating for decorative elements */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-18px); }
+}
+
 .animate-fade-up {
   animation: fadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -63,8 +75,101 @@ h1.font-serif {
   animation: fadeIn 0.5s ease both;
 }
 
+.animate-word-reveal {
+  animation: wordReveal 0.95s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-float-slow {
+  animation: floatSlow 9s ease-in-out infinite;
+}
+
+/* Scroll-reveal states (toggled by IntersectionObserver) */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Line draw animation */
+@keyframes drawLine {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/*
+  Pillar hover-reveal — description hidden on desktop,
+  expands on hover via grid-template-rows.
+  Always visible on mobile.
+*/
+.pillar-desc-wrap {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 640px) {
+  .pillar-desc-wrap {
+    grid-template-rows: 0fr;
+  }
+  .group:hover .pillar-desc-wrap {
+    grid-template-rows: 1fr;
+  }
+}
+
+/* Floating pill animations — each with unique path, speed, and phase */
+@keyframes floatPill1 {
+  0%, 100% { transform: translate(0px,   0px) rotate(-0.4deg); }
+  25%       { transform: translate(6px,  -16px) rotate( 0.7deg); }
+  55%       { transform: translate(11px,  -7px) rotate(-0.3deg); }
+  78%       { transform: translate(3px,  -20px) rotate( 0.9deg); }
+}
+@keyframes floatPill2 {
+  0%, 100% { transform: translate(  0px,   0px) rotate( 0.3deg); }
+  30%       { transform: translate( -9px, -18px) rotate(-0.8deg); }
+  62%       { transform: translate(-13px,  -5px) rotate( 0.5deg); }
+  85%       { transform: translate( -4px, -22px) rotate(-0.2deg); }
+}
+@keyframes floatPill3 {
+  0%, 100% { transform: translate(0px,   0px) rotate( 0.6deg); }
+  38%       { transform: translate(10px, -14px) rotate(-0.5deg); }
+  72%       { transform: translate(-6px, -20px) rotate( 1.0deg); }
+}
+
+/* fadeIn handles opacity, floatPillN handles transform — no conflict */
+.animate-float-pill1 {
+  animation:
+    fadeIn    0.6s ease          0.1s  both,
+    floatPill1 8s  ease-in-out   0.7s  infinite;
+}
+.animate-float-pill2 {
+  animation:
+    fadeIn    0.6s ease          0.25s both,
+    floatPill2 11s ease-in-out   0.85s infinite;
+}
+.animate-float-pill3 {
+  animation:
+    fadeIn    0.6s ease          0.4s  both,
+    floatPill3 9.5s ease-in-out  1s    infinite;
+}
+
+/* Hero display type — max optical size, max quirk */
+.hero-headline {
+  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 1;
+  letter-spacing: -0.03em;
+}
+
 .delay-100 { animation-delay: 0.1s; }
+.delay-120 { animation-delay: 0.12s; }
 .delay-200 { animation-delay: 0.2s; }
+.delay-240 { animation-delay: 0.24s; }
 .delay-300 { animation-delay: 0.3s; }
+.delay-360 { animation-delay: 0.36s; }
 .delay-400 { animation-delay: 0.4s; }
 .delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
