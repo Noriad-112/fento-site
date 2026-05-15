@@ -29,11 +29,6 @@ export const menu = {
       ingredients:
         "Avocado, cilantro, lime juice, white onion, jalapeno, habanero, garlic, salt.",
     },
-    {
-      name: "Bean Puree",
-      ingredients:
-        "Black beans, spring onions, garlic, olive oil, sunflower seed oil, salt, cumin powder, red onion, carrot.",
-    },
   ],
   sections: [
     {

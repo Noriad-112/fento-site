@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { HeroBanner } from "@/components/ui/HeroBanner";
-import { MenuTabs } from "@/components/ui/MenuTabs";
+import { MenuScroll } from "@/components/ui/MenuScroll";
 import { Section } from "@/components/ui/Section";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { menu } from "@/content/menu";
@@ -47,9 +47,9 @@ export default function MenuPage() {
         </div>
       </HeroBanner>
 
-      {/* Accordion menu */}
+      {/* Scrollable menu with sidebar nav */}
       <Section className="py-6 sm:py-8">
-        <MenuTabs />
+        <MenuScroll />
       </Section>
 
       {/* House-Made Sauces — hover to reveal ingredients */}
