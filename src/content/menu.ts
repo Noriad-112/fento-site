@@ -58,10 +58,16 @@ export const menu = {
     {
       title: "Nachos",
       description:
-        "Tortilla chips with house-made toppings and a choice of plant-based or chicken variations.",
+        "Tortilla chips with house-made toppings and a choice of plant-based or free range chicken variations.",
       items: [
         {
-          name: "Regular/Vegan Nachos",
+          name: "Regular Nachos",
+          price: 13.5,
+          details:
+            "Tortilla chips, black beans, red salsa, cashew crema, pickles, coriander.",
+        },
+        {
+          name: "Vegan Nachos",
           price: 13.5,
           details:
             "Tortilla chips, black beans, red salsa, cashew crema, pickles, coriander.",
@@ -73,20 +79,26 @@ export const menu = {
             "Tortilla chips, black beans, sweet potato, red salsa, cashew crema, pickles, coriander.",
         },
         {
-          name: "Chicken Nacho",
+          name: "Free Range Chicken Nacho",
           price: 15.5,
           details:
-            "Tortilla chips, black beans, chicken, red salsa, cashew crema, pickles, coriander.",
+            "Tortilla chips, black beans, free range chicken, red salsa, cashew crema, pickles, coriander.",
         },
       ],
     },
     {
       title: "Burritos",
       description:
-        "Warm burrito options with vegan, mushroom, or local free-range chicken fillings.",
+        "Warm burrito options with vegetarian, vegan, mushroom, or free-range chicken fillings.",
       items: [
         {
-          name: "Vegan/Vegetarian",
+          name: "Vegetarian",
+          price: 14.5,
+          details:
+            "Soft tortilla wrap, bean puree, brown rice and black beans, sweet potato, mixed greens, red salsa, cashew crema, pickles, coriander.",
+        },
+        {
+          name: "Vegan",
           price: 14.5,
           details:
             "Soft tortilla wrap, bean puree, brown rice and black beans, sweet potato, mixed greens, red salsa, cashew crema, pickles, coriander.",
@@ -98,10 +110,10 @@ export const menu = {
             "Burrito base with shiitake mushrooms, jalapeno, bell pepper, oregano, zaatar, and onion.",
         },
         {
-          name: "Local Free Range Chicken",
+          name: "Free Range Chicken",
           price: 16.0,
           details:
-            "Burrito base with marinated chicken, lime juice, paprika, oregano, sunflower oil, and salt.",
+            "Burrito base with marinated free range chicken, lime juice, paprika, oregano, sunflower oil, and salt.",
         },
       ],
     },
@@ -124,15 +136,15 @@ export const menu = {
         },
         {
           name: "Local Mushrooms",
-          price: 14.5,
+          price: 13.5,
           details:
             "Local organic corn tortilla, locally grown shiitake mushrooms, and cheese or vegan cheese.",
         },
         {
-          name: "Chicken",
+          name: "Free Range Chicken",
           price: 13.5,
           details:
-            "Local organic corn tortilla, EU farm-raised chicken, and cheese or vegan cheese.",
+            "Local organic corn tortilla, free range chicken, and cheese or vegan cheese.",
         },
       ],
     },
@@ -141,10 +153,11 @@ export const menu = {
       description:
         "Add-ons and sauces to customize your order.",
       items: [
-        { name: "Bio Chips & Homemade Salsa", price: 6.0, details: "" },
+        { name: "Chips, Guac & Salsa", price: 9.0, details: "" },
+        { name: "Chips & Guac", price: 7.5, details: "" },
         { name: "Guacamole", price: 3.0, details: "" },
         { name: "Mango Hot Sauce", price: 2.0, details: "" },
-        { name: "Local Free Range Chicken", price: 4.0, details: "" },
+        { name: "Free Range Chicken", price: 4.0, details: "" },
       ],
     },
     {
@@ -152,7 +165,7 @@ export const menu = {
       description: "Daily fresh juice choices prepared in-house.",
       items: [
         {
-          name: "Lite n' Stormy",
+          name: "Lite 'n Stormy",
           price: 5.0,
           details: "Ginger juice, apple juice, lime juice, agave, cold water.",
         },
