@@ -1,22 +1,12 @@
 import type { Metadata } from "next";
 
-import { PageHeader } from "@/components/ui/PageHeader";
+import { HeroBanner } from "@/components/ui/HeroBanner";
+import { MenuScroll } from "@/components/ui/MenuScroll";
 import { Section } from "@/components/ui/Section";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { menu } from "@/content/menu";
 import { site } from "@/content/site";
 import { createWebPageJsonLd } from "@/lib/seo";
-
-const euroFormatter = new Intl.NumberFormat("nl-NL", {
-  style: "currency",
-  currency: "EUR",
-  minimumFractionDigits: 2,
-});
-const dateFormatter = new Intl.DateTimeFormat("nl-NL", {
-  day: "2-digit",
-  month: "long",
-  year: "numeric",
-});
 
 export const metadata: Metadata = {
   title: site.pages.menu.title,
@@ -36,84 +26,60 @@ export default function MenuPage() {
           path: site.pages.menu.menuUrl,
         })}
       />
-      <Section size="loose" className="pt-12 sm:pt-16">
-        <PageHeader
-          eyebrow={site.tagline}
-          title={site.pages.menu.title}
-          description={site.pages.menu.philosophy}
-        />
-      </Section>
-      <Section variant="muted">
-        <div className="space-y-4">
-          <p className="text-xs uppercase tracking-[0.3em] text-slate-500">
-            {site.pages.menu.dietaryClarityHeading}
-          </p>
-          <ul className="space-y-2 text-sm text-slate-600">
-            {site.pages.menu.dietaryClarity.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-          <p className="text-sm text-slate-600">
-            {site.pages.menu.glutenDisclaimer}
-          </p>
-          <p className="text-sm text-slate-600">
-            Last updated: {dateFormatter.format(new Date(menu.lastUpdated))}.{" "}
-            {menu.note}
-          </p>
-          <p className="text-sm text-slate-600">{menu.ingredientsSourceNote}</p>
+
+      {/* Hero */}
+      <HeroBanner className="py-14 sm:py-20">
+        <p className="animate-fade-up text-[10px] uppercase tracking-[0.4em] text-white/40">
+          {site.tagline}
+        </p>
+        <h1
+          className="animate-fade-up delay-100 hero-headline mt-3 font-serif text-[clamp(4.5rem,14vw,12rem)] italic leading-none text-white"
+          style={{ fontVariationSettings: '"opsz" 144, "SOFT" 50, "WONK" 0' }}
+        >
+          Menu
+        </h1>
+        <div className="animate-fade-up delay-300 mt-8 flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-white/10 pt-6">
+          {site.pages.menu.dietaryClarity.map((item) => (
+            <span key={item} className="text-xs text-white/50">
+              {item}
+            </span>
+          ))}
         </div>
+      </HeroBanner>
+
+      {/* Scrollable menu with sidebar nav */}
+      <Section className="py-6 sm:py-8">
+        <MenuScroll />
       </Section>
-      <Section>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {menu.sections.map((section) => (
-            <div
-              key={section.title}
-              className="rounded-2xl border border-slate-200/70 bg-white/80 p-4 text-sm text-slate-700"
-            >
-              <p className="font-serif text-lg text-slate-900">
-                {section.title}
+
+      {/* House-Made Sauces — hover to reveal ingredients */}
+      <Section variant="muted" className="py-10 sm:py-14">
+        <p className="mb-6 text-[10px] uppercase tracking-[0.4em] text-[color:var(--accent)] opacity-60">
+          Made daily
+        </p>
+        <h2
+          className="mb-8 font-serif text-[clamp(2rem,5vw,4rem)] italic leading-none text-slate-900"
+          style={{ fontVariationSettings: '"opsz" 144, "SOFT" 50, "WONK" 0', letterSpacing: '-0.02em' }}
+        >
+          House-Made Sauces
+        </h2>
+        <div className="divide-y divide-slate-200/50">
+          {menu.houseMadeSauces.map((sauce) => (
+            <div key={sauce.name} className="group cursor-default py-5">
+              <p className="font-serif text-2xl text-slate-900 transition-colors duration-200 group-hover:text-[color:var(--accent)] sm:text-3xl">
+                {sauce.name}
               </p>
-              <p className="mt-2 text-xs leading-relaxed text-slate-500">
-                {section.description}
-              </p>
-              <ul className="mt-3 space-y-2">
-                {section.items.map((item) => (
-                  <li key={item.name} className="space-y-1 leading-relaxed">
-                    <div className="flex items-start justify-between gap-4">
-                      <span>{item.name}</span>
-                      <span className="font-medium text-slate-900">
-                        {euroFormatter.format(item.price)}
-                      </span>
-                    </div>
-                    {item.details ? (
-                      <p className="text-xs leading-relaxed text-slate-500">
-                        {item.details}
-                      </p>
-                    ) : null}
-                  </li>
-                ))}
-              </ul>
+              <div className="pillar-desc-wrap">
+                <div className="overflow-hidden">
+                  <p className="pt-2 text-sm leading-relaxed text-slate-400 opacity-0 transition-opacity delay-75 duration-150 group-hover:opacity-100 max-sm:opacity-100">
+                    {sauce.ingredients}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
-      </Section>
-      <Section variant="muted">
-        <div className="space-y-4">
-          <h2 className="font-serif text-2xl text-slate-900">House-Made Sauces</h2>
-          <ul className="grid gap-2 text-sm text-slate-700 sm:grid-cols-2 lg:grid-cols-3">
-            {menu.houseMadeSauces.map((sauce) => (
-              <li
-                key={sauce.name}
-                className="rounded-xl border border-slate-200/70 bg-white/80 px-3 py-2"
-              >
-                <p className="font-medium text-slate-900">{sauce.name}</p>
-                <p className="mt-1 text-xs leading-relaxed text-slate-500">
-                  {sauce.ingredients}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <p className="mt-6 text-xs text-slate-400">{menu.note}</p>
       </Section>
     </>
   );
