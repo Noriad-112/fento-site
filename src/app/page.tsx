@@ -267,7 +267,7 @@ export default function Home() {
         <Container className="relative">
           <ScrollReveal>
             <p className="font-serif text-[clamp(1.6rem,3.8vw,3.2rem)] leading-[1.1] text-white/90 max-w-2xl">
-              "Designed vegan from the start. Built for everyone."
+              &ldquo;Designed vegan from the start. Built for everyone.&rdquo;
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <ButtonLink href="/story" variant="inverted">Our story</ButtonLink>
