@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local design assets (logos, original photos, inspiration) — not part of the site
+/_assets/
+.superpowers/
