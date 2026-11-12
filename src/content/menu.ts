@@ -6,26 +6,48 @@ export const menu = {
   houseMadeSauces: [
     {
       name: "Cashew Crema",
+      tagline: "Smoky, creamy, quietly warm — cashew, chipotle and lime.",
+      // heat 1–4: PLACEHOLDER estimated from the chilies in the recipe — confirm with Jeroen
+      heat: 1,
+      color: "#e8d2b0",
       ingredients:
         "Cashew nuts, nutritional yeast, lime juice, chipotle peppers in adobo, garlic, salt.",
     },
     {
       name: "Red Salsa",
+      tagline: "Fresh tomato and lime with a jalapeño–habanero kick.",
+      // heat 1–4: PLACEHOLDER estimated from the chilies in the recipe — confirm with Jeroen
+      heat: 2,
+      color: "#c8402f",
+      photo: "/photos/red-salsa.png",
       ingredients:
         "Tomato pulp, fresh tomatoes, white onion, cilantro, spring onion, lime, jalapeno, habanero, garlic, salt.",
     },
     {
       name: "Salsa Verde",
+      tagline: "Bright tomatillo, coriander and lime. Zingy, with bite.",
+      // heat 1–4: PLACEHOLDER estimated from the chilies in the recipe — confirm with Jeroen
+      heat: 2,
+      color: "#6f8f3a",
+      photo: "/photos/salsa-verde.jpg",
       ingredients:
         "Tomatillo, white onion, cilantro, lime juice, jalapeno, habanero, garlic, salt.",
     },
     {
       name: "Mango Hot Sauce",
+      tagline: "Sweet mango up front, habanero heat right behind.",
+      // heat 1–4: PLACEHOLDER estimated from the chilies in the recipe — confirm with Jeroen
+      heat: 4,
+      color: "#f0a12b",
       ingredients:
-        "Mango, habanero pepper, yellow pickle juice, orange juice, agave, salt.",
+        "Mango, habanero pepper, yellow pickle juice, orange juice, agave syrup, salt.",
     },
     {
       name: "Guacamole",
+      tagline: "Avocado, lime and coriander, with a little chili.",
+      // heat 1–4: PLACEHOLDER estimated from the chilies in the recipe — confirm with Jeroen
+      heat: 1,
+      color: "#8db04a",
       ingredients:
         "Avocado, cilantro, lime juice, white onion, jalapeno, habanero, garlic, salt.",
     },
@@ -53,29 +75,29 @@ export const menu = {
     {
       title: "Nachos",
       description:
-        "Tortilla chips with house-made toppings and a choice of plant-based or free range chicken variations.",
+        "Tortilla chips with homemade toppings and a choice of plant-based or free range chicken variations.",
       items: [
         {
           name: "Regular Nachos",
-          price: 13.5,
+          price: 14.5,
           details:
             "Tortilla chips, black beans, red salsa, cashew crema, pickles, coriander.",
         },
         {
           name: "Vegan Nachos",
-          price: 13.5,
+          price: 14.5,
           details:
             "Tortilla chips, black beans, red salsa, cashew crema, pickles, coriander.",
         },
         {
           name: "Sweet Potato Party Nacho",
-          price: 14.5,
+          price: 15.5,
           details:
             "Tortilla chips, black beans, sweet potato, red salsa, cashew crema, pickles, coriander.",
         },
         {
           name: "Free Range Chicken Nacho",
-          price: 15.5,
+          price: 16.5,
           details:
             "Tortilla chips, black beans, free range chicken, red salsa, cashew crema, pickles, coriander.",
         },
@@ -119,13 +141,13 @@ export const menu = {
       items: [
         {
           name: "Kalesadilla",
-          price: 10.5,
+          price: 11.5,
           details:
             "Local organic corn tortilla, kale filling, and cheese.",
         },
         {
           name: "Vegan Kalesadilla",
-          price: 11.5,
+          price: 12.5,
           details:
             "Local organic corn tortilla, kale filling, and vegan cheese.",
         },
@@ -157,17 +179,17 @@ export const menu = {
     },
     {
       title: "Fresh Juices",
-      description: "Daily fresh juice choices prepared in-house.",
+      description: "Fresh juices, homemade daily.",
       items: [
         {
           name: "Lite 'n Stormy",
           price: 5.0,
-          details: "Ginger juice, apple juice, lime juice, agave, cold water.",
+          details: "Slow-juiced ginger, organic apple juice, fresh lime juice, agave syrup.",
         },
         {
           name: "Strawberry Hibiscus",
           price: 5.0,
-          details: "Frozen strawberries, hibiscus flowers, water, agave.",
+          details: "Strawberries, hibiscus flower tea, agave syrup.",
         },
       ],
     },

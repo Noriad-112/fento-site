@@ -55,7 +55,7 @@ export function Header() {
                     aria-current={isActive ? "page" : undefined}
                     className={cn(
                       "relative rounded-full px-3 py-1.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-white/80",
-                      "after:absolute after:bottom-0 after:left-3 after:right-3 after:h-px after:origin-left after:bg-[color:var(--accent)] after:transition-transform after:duration-300",
+                      "after:absolute after:bottom-0 after:left-3 after:right-3 after:h-px after:origin-left after:bg-[color:var(--pop)] after:transition-transform after:duration-300",
                       isActive
                         ? "text-slate-900 after:scale-x-100"
                         : "after:scale-x-0 hover:text-slate-900 hover:after:scale-x-100"
@@ -69,6 +69,13 @@ export function Header() {
           </ul>
         </nav>
 
+        <div className="flex items-center gap-2 md:ml-3">
+        <Link
+          href="/visit"
+          className="rounded-full bg-[color:var(--accent)] px-4 py-2 text-xs font-medium tracking-wide text-white transition-colors hover:bg-[color:var(--accent-strong,#173a30)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)] focus-visible:ring-offset-2 sm:text-sm"
+        >
+          Find us
+        </Link>
         <button
           type="button"
           aria-label="Toggle navigation"
@@ -93,6 +100,7 @@ export function Header() {
             />
           </div>
         </button>
+        </div>
       </Container>
 
       <div

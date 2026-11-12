@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
 import { HomeHero } from "@/components/ui/HomeHero";
+import { SauceList } from "@/components/ui/SauceList";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Section } from "@/components/ui/Section";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -39,18 +40,17 @@ function compactHours(
     }
     const first = dayAbbr[cur.day] ?? cur.day;
     const last = dayAbbr[hours[j - 1].day] ?? hours[j - 1].day;
-    groups.push({ label: j - i === 1 ? first : `${first}–${last}`, time: `${cur.opens}–${cur.closes}` });
+    groups.push({ label: j - i === 7 ? "Daily" : j - i === 1 ? first : `${first}–${last}`, time: `${cur.opens}–${cur.closes}` });
     i = j;
   }
   return groups.map(({ label, time }) => `${label} ${time}`).join(" · ");
 }
 
 const MARQUEE_ITEMS = [
-  "Vegan-built",
-  "In-house sauces",
-  "Gluten-aware",
-  "No preservatives",
-  "Plant-forward",
+  "Homemade",
+  "Gluten free options",
+  "Lactose free options",
+  "Vegan / Vegetarian",
   "Amsterdam",
 ];
 
@@ -74,16 +74,16 @@ export default function Home() {
       {/* Hero */}
       <HomeHero />
 
-      {/* Marquee strip — inverted green band */}
-      <div className="overflow-hidden bg-[color:var(--accent)] py-4">
+      {/* Marquee strip — tomato accent band */}
+      <div className="overflow-hidden bg-[color:var(--pop)] py-4">
         <div className="flex whitespace-nowrap animate-marquee">
           {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS, ...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, i) => (
             <span
               key={i}
-              className="flex items-center gap-5 px-5 text-[11px] font-medium uppercase tracking-[0.28em] text-white/75"
+              className="flex items-center gap-5 px-5 text-[11px] font-medium uppercase tracking-[0.28em] text-[#fff4ec]"
             >
               {item}
-              <span className="text-white/30" aria-hidden="true">✦</span>
+              <span className="text-[#fff4ec]/55" aria-hidden="true">✦</span>
             </span>
           ))}
         </div>
@@ -107,48 +107,63 @@ export default function Home() {
             aligned with self/justify-self, animated directly (no ScrollReveal wrapper). */}
         <div className="flex flex-col items-center gap-5 py-4 sm:grid sm:min-h-[360px] sm:gap-0 sm:py-8">
 
-          {/* Plant-built — top left */}
+          {/* Vegan / Vegetarian — top left */}
           <div className="animate-float-pill1 group relative z-10 cursor-default sm:col-start-1 sm:row-start-1 sm:self-start sm:justify-self-start">
             <div className="animate-pill-aura-1 rounded-full bg-[color:var(--accent)] px-7 py-4 transition-opacity duration-300 group-hover:opacity-75">
               <span
                 className="block font-serif text-[clamp(1.6rem,4vw,3rem)] italic leading-none text-white"
                 style={{ fontVariationSettings: '"opsz" 144, "SOFT" 60, "WONK" 0', letterSpacing: '-0.02em' }}
               >
-                Plant-built
+                Vegan / Vegetarian
               </span>
             </div>
             <p className="absolute left-0 top-full mt-2 max-w-[240px] text-sm leading-relaxed text-slate-500 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-              No animal products in the base — ever. Additions are optional.
+              Every dish starts plant-based. Cheese and chicken are optional.
             </p>
           </div>
 
-          {/* Made in-house — bottom right */}
+          {/* Lactose free options — top right */}
+          <div className="animate-float-pill3 group relative z-10 cursor-default sm:col-start-1 sm:row-start-1 sm:self-start sm:justify-self-end sm:mt-6">
+            <div className="animate-pill-aura-2 rounded-full bg-[color:var(--accent)] px-6 py-3 transition-opacity duration-300 group-hover:opacity-75">
+              <span
+                className="block font-serif text-[clamp(1.3rem,3vw,2.2rem)] italic leading-none text-white"
+                style={{ fontVariationSettings: '"opsz" 144, "SOFT" 60, "WONK" 0', letterSpacing: '-0.015em' }}
+              >
+                Lactose free options
+              </span>
+            </div>
+            <p className="absolute right-0 text-right top-full mt-2 max-w-[240px] text-sm leading-relaxed text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+              Cashew crema and vegan cheese — no dairy needed.
+            </p>
+          </div>
+
+          {/* Homemade — bottom right */}
           <div className="animate-float-pill2 group relative z-20 cursor-default sm:col-start-1 sm:row-start-1 sm:self-end sm:justify-self-end">
             <div className="animate-pill-aura-2 rounded-full bg-[color:var(--accent)] px-9 py-5 transition-opacity duration-300 group-hover:opacity-75">
               <span
                 className="block font-serif text-[clamp(2rem,5.5vw,4.2rem)] italic leading-none text-white"
                 style={{ fontVariationSettings: '"opsz" 144, "SOFT" 60, "WONK" 0', letterSpacing: '-0.015em' }}
               >
-                Made in-house
+                Homemade
               </span>
             </div>
-            <p className="absolute right-0 top-full mt-2 max-w-[240px] text-right text-sm leading-relaxed text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-              Every sauce produced daily. No preservatives, no shortcuts.
+            <p className="absolute right-0 text-right top-full mt-2 max-w-[240px] text-sm leading-relaxed text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+              Every sauce made daily. No preservatives, no shortcuts.
             </p>
           </div>
 
-          {/* Gluten-aware — center */}
+          {/* Gluten free options — center */}
           <div className="animate-float-pill3 group relative z-10 cursor-default sm:col-start-1 sm:row-start-1 sm:self-center sm:justify-self-center">
             <div className="animate-pill-aura-3 rounded-full bg-[color:var(--accent)] px-6 py-3 transition-opacity duration-300 group-hover:opacity-75">
               <span
                 className="block font-serif text-[clamp(1.3rem,3vw,2.2rem)] italic leading-none text-white"
                 style={{ fontVariationSettings: '"opsz" 144, "SOFT" 60, "WONK" 0', letterSpacing: '-0.015em' }}
               >
-                Gluten-aware
+                Gluten free options
               </span>
             </div>
-            <p className="absolute left-1/2 top-full mt-2 max-w-[240px] -translate-x-1/2 text-center text-sm leading-relaxed text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-              Nearly the whole menu is gluten-free. Ask staff for exceptions.
+            <p className="absolute left-1/2 -translate-x-1/2 text-center top-full mt-2 max-w-[240px] text-sm leading-relaxed text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+              Most of the menu is gluten free. Ask staff for exceptions.
             </p>
           </div>
 
@@ -156,10 +171,13 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* Homemade sauces with heat levels (salsashop.com pattern) */}
+      <SauceList />
+
       {/* Location cards */}
       <Section variant="muted" className="py-12 sm:py-16">
         <ScrollReveal className="mb-8 sm:mb-10">
-          <p className="text-[10px] uppercase tracking-[0.4em] text-[color:var(--accent)] opacity-60">
+          <p className="text-[10px] uppercase tracking-[0.4em] text-[color:var(--pop)]">
             Where to find us
           </p>
           <h2 className="mt-2 font-serif text-3xl text-slate-900 sm:text-4xl">

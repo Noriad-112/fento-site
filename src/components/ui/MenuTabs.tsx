@@ -15,7 +15,7 @@ const sectionPhotos: Record<string, string> = {
   Bowls: "/photos/bowl-overhead.jpg",
   Nachos: "/photos/nachos-bowl.jpg",
   Burritos: "/photos/burrito-plate.jpg",
-  Quesadillas: "/photos/quesadilla-press.jpg",
+  Quesadillas: "/photos/quesadilla-plate.jpg",
   Extra: "/photos/salsa-verde.jpg",
   "Fresh Juices": "/photos/hibiscus-drink.png",
 };

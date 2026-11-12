@@ -64,8 +64,8 @@ export function HomeHero() {
 
       <Container className="relative">
         {/* Eyebrow */}
-        <p className="animate-fade-in text-[10px] uppercase tracking-[0.4em] text-[color:var(--accent)] opacity-60">
-          Amsterdam · Foodhallen · Plant-built
+        <p className="animate-fade-in text-[10px] uppercase tracking-[0.4em] text-[color:var(--pop)]">
+          Amsterdam · Foodhallen · Mexican fusion
         </p>
 
         {/* Giant stacked headline — each line clips from below */}
@@ -82,7 +82,7 @@ export function HomeHero() {
           </div>
           <div className="overflow-hidden">
             <p className="hero-headline animate-word-reveal delay-240 font-serif text-[clamp(3.2rem,10.5vw,9rem)] leading-[0.88] text-[color:var(--accent)]">
-              made in-house.
+              homemade.
             </p>
           </div>
         </div>

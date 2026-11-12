@@ -77,7 +77,7 @@ export default function CateringPage() {
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:aspect-[4/5]">
                 <Image
                   src="/photos/bowl-with-sauces.jpg"
-                  alt="Fento bowl with house-made sauces"
+                  alt="Fento bowl with homemade sauces"
                   fill
                   className="object-cover object-center"
                   sizes="(min-width: 1024px) 40vw, 100vw"

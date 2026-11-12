@@ -2,8 +2,8 @@ export const site = {
   name: "Fento",
   siteUrl: "https://www.thefento.com",
   description:
-    "Fento serves Mexican-inspired food built from a fully plant-based foundation. Every dish starts vegan, with optional additions of dairy or chicken. All sauces are made in-house without preservatives, and nearly the entire menu is gluten-free.",
-  tagline: "Vegan-built Mexican fusion in Amsterdam",
+    "Homemade Mexican fusion at Foodhallen Amsterdam. Gluten free, lactose free, vegan and vegetarian options — all sauces made daily, no preservatives.",
+  tagline: "Mexican fusion in Amsterdam",
   priceRange: "€€",
   servesCuisine: ["Plant-forward", "Mexican-inspired"],
   dietarySchema: [
@@ -41,9 +41,9 @@ export const site = {
         { day: "Tuesday", opens: "12:00", closes: "22:00" },
         { day: "Wednesday", opens: "12:00", closes: "22:00" },
         { day: "Thursday", opens: "12:00", closes: "22:00" },
-        { day: "Friday", opens: "12:00", closes: "23:00" },
-        { day: "Saturday", opens: "12:00", closes: "23:00" },
-        { day: "Sunday", opens: "12:00", closes: "21:00" },
+        { day: "Friday", opens: "12:00", closes: "22:00" },
+        { day: "Saturday", opens: "12:00", closes: "22:00" },
+        { day: "Sunday", opens: "12:00", closes: "22:00" },
       ],
       cta: {
         label: "Explore the menu",
@@ -80,13 +80,13 @@ export const site = {
   ],
   pages: {
     home: {
-      heroHeadline: "Vegan-built Mexican fusion. Clean, bold, and made in-house.",
+      heroHeadline: "Mexican fusion. Clean, bold, and homemade.",
       heroSubhead:
         "All sauces made from scratch. No preservatives. Nearly the entire menu gluten-free.",
       heroStatement:
         "Fento lives in two linked spaces: a fast-moving stand inside Foodhallen and a slower kitchen for daytime meals and private gatherings at Potgieterstraat.",
       introParagraph:
-        "Fento is a Mexican-inspired kitchen with a plant-based foundation. We build every dish vegan first, then offer optional additions to meet different tastes. Our sauces are made in-house every day, and we take dietary needs seriously — without compromising on flavor.",
+        "Fento is a Mexican-inspired kitchen with a plant-based foundation. We build every dish vegan first, then offer optional additions to meet different tastes. Our sauces are homemade every day, and we take dietary needs seriously — without compromising on flavor.",
       primaryCta: {
         label: "Private dinners & events",
         href: "/catering",
@@ -99,10 +99,10 @@ export const site = {
     menu: {
       title: "Menu",
       philosophy:
-        "Our menu is built from a plant-based core. Every dish starts vegan. Some dishes offer optional additions of dairy or chicken. All sauces are made in-house without preservatives.",
+        "Our menu is built from a plant-based core. Every dish starts vegan. Some dishes offer optional additions of dairy or chicken. All sauces are homemade without preservatives.",
       dietaryClarityHeading: "Dietary clarity",
       dietaryClarity: [
-        "Vegan-built menu",
+        "Vegan / vegetarian menu",
         "Dairy-free options available",
         "Gluten-free options available",
         "Ask staff for current gluten-containing items",
@@ -118,14 +118,14 @@ export const site = {
       headline: "Built vegan first. Finished with intention.",
       body: [
         "Fento began with a simple idea: start from plants, build real flavor, and leave out unnecessary processing. Instead of adapting meat-based dishes to plant-based alternatives, we design everything vegan from the beginning.",
-        "All of our sauces are made in-house, without preservatives. This allows us to control flavor, texture, and quality — and to serve food that feels lighter, cleaner, and more balanced.",
+        "All of our sauces are homemade, without preservatives. This allows us to control flavor, texture, and quality — and to serve food that feels lighter, cleaner, and more balanced.",
         "Whether you eat fully plant-based or not, our food is designed to be satisfying, flexible, and transparent.",
       ],
     },
     visit: {
       title: "Visit",
       sharedNote:
-        "Both locations share the same kitchen philosophy, recipes, and house-made sauces.",
+        "Both locations share the same kitchen philosophy, recipes, and homemade sauces.",
       directionsLabel: "Get directions",
     },
     catering: {

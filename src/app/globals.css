@@ -6,6 +6,10 @@
   --ink-soft: #3f4a52;
   --accent: #1f4b3f;
   --accent-soft: #d6e3dc;
+  /* "pop" = the one accent colour: terracotta, used sparingly next to the green */
+  --pop: #c47457;
+  --pop-deep: #a35a40;
+  --pop-soft: #f3e2d9;
   --surface: #fbf9f6;
   --surface-elevated: #ffffff;
   --surface-muted: #f2ede6;

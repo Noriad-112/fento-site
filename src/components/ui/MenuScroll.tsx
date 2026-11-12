@@ -15,7 +15,7 @@ const sectionPhotos: Record<string, { src: string; position?: string }> = {
   Bowls:          { src: "/photos/bowl-overhead.jpg",    position: "center 50%" },
   Nachos:         { src: "/photos/nachos-bowl.jpg",      position: "center 50%" },
   Burritos:       { src: "/photos/burrito-plate.jpg",    position: "center 40%" },
-  Quesadillas:    { src: "/photos/quesadilla-press.jpg", position: "center 50%" },
+  Quesadillas:    { src: "/photos/quesadilla-plate.jpg", position: "center 50%" },
   Extra:          { src: "/photos/salsa-verde.jpg",      position: "center 40%" },
   "Fresh Juices": { src: "/photos/hibiscus-drink.png",   position: "center 40%" },
 };

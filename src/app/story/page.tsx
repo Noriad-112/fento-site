@@ -25,8 +25,8 @@ const principles = [
   },
   {
     num: "02",
-    headline: "Make it in-house.",
-    body: "All of our sauces are made in-house, without preservatives. This allows us to control flavor, texture, and quality — and to serve food that feels lighter, cleaner, and more balanced.",
+    headline: "Keep it homemade.",
+    body: "All of our sauces are homemade, without preservatives. This allows us to control flavor, texture, and quality — and to serve food that feels lighter, cleaner, and more balanced.",
   },
   {
     num: "03",
@@ -87,7 +87,7 @@ export default function StoryPage() {
 
             {/* Intro text */}
             <ScrollReveal delay={100}>
-              <p className="text-[10px] uppercase tracking-[0.4em] text-[color:var(--accent)] opacity-70 mb-4">
+              <p className="text-[10px] uppercase tracking-[0.4em] text-[color:var(--pop)] mb-4">
                 The idea
               </p>
               <p

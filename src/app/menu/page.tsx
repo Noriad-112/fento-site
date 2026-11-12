@@ -52,16 +52,16 @@ export default function MenuPage() {
         <MenuScroll />
       </Section>
 
-      {/* House-Made Sauces — hover to reveal ingredients */}
+      {/* Homemade Sauces — hover to reveal ingredients */}
       <Section variant="muted" className="py-10 sm:py-14">
-        <p className="mb-6 text-[10px] uppercase tracking-[0.4em] text-[color:var(--accent)] opacity-60">
+        <p className="mb-6 text-[10px] uppercase tracking-[0.4em] text-[color:var(--pop)]">
           Made daily
         </p>
         <h2
           className="mb-8 font-serif text-[clamp(2rem,5vw,4rem)] italic leading-none text-slate-900"
           style={{ fontVariationSettings: '"opsz" 144, "SOFT" 50, "WONK" 0', letterSpacing: '-0.02em' }}
         >
-          House-Made Sauces
+          Homemade Sauces
         </h2>
         <div className="divide-y divide-slate-200/50">
           {menu.houseMadeSauces.map((sauce) => (

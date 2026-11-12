@@ -40,7 +40,7 @@ function groupHours(
     }
     const first = dayAbbr[cur.day] ?? cur.day;
     const last = dayAbbr[hours[j - 1].day] ?? hours[j - 1].day;
-    result.push({ label: j - i === 1 ? first : `${first}–${last}`, time: `${cur.opens}–${cur.closes}` });
+    result.push({ label: j - i === 7 ? "Daily" : j - i === 1 ? first : `${first}–${last}`, time: `${cur.opens}–${cur.closes}` });
     i = j;
   }
   return result;
@@ -106,7 +106,7 @@ export default function VisitPage() {
 
                 {/* Info */}
                 <ScrollReveal delay={100}>
-                  <p className="text-[10px] uppercase tracking-[0.4em] text-[color:var(--accent)] opacity-70 mb-3">
+                  <p className="text-[10px] uppercase tracking-[0.4em] text-[color:var(--pop)] mb-3">
                     {location.kind === "foodhallen-stand" ? "Stand 18 · Foodhallen" : "Sauvage Space"}
                   </p>
                   <h2
