@@ -50,14 +50,14 @@ export default function CateringPage() {
       />
 
       {/* Banner */}
-      <HeroBanner>
+      <HeroBanner compact>
         <p className="animate-fade-up text-[10px] uppercase tracking-[0.4em] text-white/40">
           Catering &amp; events
         </p>
         <h1
           className="animate-fade-up delay-100 mt-4 font-serif italic leading-[1.04] text-white"
           style={{
-            fontSize: "clamp(2.6rem, 7vw, 6.5rem)",
+            fontSize: "clamp(2.4rem, 5.5vw, 4.75rem)",
             fontVariationSettings: '"opsz" 144, "SOFT" 60, "WONK" 0',
             letterSpacing: "-0.025em",
           }}
@@ -69,66 +69,67 @@ export default function CateringPage() {
         </p>
       </HeroBanner>
 
-      {/* Photo */}
-      <section className="pt-14 pb-0 sm:pt-18">
-        <Container>
-          <ScrollReveal>
-            <div className="relative aspect-[21/9] overflow-hidden rounded-2xl">
-              <Image
-                src="/photos/bowl-with-sauces.jpg"
-                alt="Fento bowl with house-made sauces"
-                fill
-                className="object-cover object-center"
-                sizes="100vw"
-                priority
-              />
-            </div>
-          </ScrollReveal>
-        </Container>
-      </section>
-
-      {/* What we do — editorial numbered list */}
+      {/* What we do — photo beside the numbered list (stacks on mobile) */}
       <section className="bg-[color:var(--surface)] py-16 sm:py-20">
         <Container>
-          <ScrollReveal>
-            <h2
-              className="font-serif italic leading-none text-slate-900 mb-12"
-              style={{
-                fontSize: "clamp(2rem, 4vw, 3.2rem)",
-                fontVariationSettings: '"opsz" 144, "SOFT" 50, "WONK" 0',
-                letterSpacing: "-0.02em",
-              }}
-            >
-              What we do
-            </h2>
-          </ScrollReveal>
-          <div className="divide-y divide-slate-200/60">
-            {formats.map(({ num, label, description }) => (
-              <ScrollReveal key={num}>
-                <div className="grid gap-4 py-10 sm:grid-cols-[60px_1fr_1fr] sm:gap-10">
-                  <p className="font-serif text-sm tracking-[0.2em] text-[color:var(--accent)] sm:pt-1">
-                    {num}
-                  </p>
-                  <h3
-                    className="font-serif italic leading-tight text-slate-900"
-                    style={{
-                      fontSize: "clamp(1.4rem, 2.5vw, 1.9rem)",
-                      fontVariationSettings: '"opsz" 144, "SOFT" 40, "WONK" 0',
-                      letterSpacing: "-0.015em",
-                    }}
-                  >
-                    {label}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-slate-500">{description}</p>
-                </div>
+          <div className="grid gap-10 lg:grid-cols-[5fr_7fr] lg:gap-16 lg:items-start">
+            <ScrollReveal className="lg:sticky lg:top-24">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:aspect-[4/5]">
+                <Image
+                  src="/photos/bowl-with-sauces.jpg"
+                  alt="Fento bowl with house-made sauces"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  priority
+                />
+              </div>
+            </ScrollReveal>
+
+            <div>
+              <ScrollReveal>
+                <h2
+                  className="font-serif italic leading-none text-slate-900 mb-6"
+                  style={{
+                    fontSize: "clamp(2rem, 4vw, 3.2rem)",
+                    fontVariationSettings: '"opsz" 144, "SOFT" 50, "WONK" 0',
+                    letterSpacing: "-0.02em",
+                  }}
+                >
+                  What we do
+                </h2>
               </ScrollReveal>
-            ))}
+              <div className="divide-y divide-slate-200/60">
+                {formats.map(({ num, label, description }) => (
+                  <ScrollReveal key={num}>
+                    <div className="grid grid-cols-[44px_1fr] gap-x-6 gap-y-2 py-8">
+                      <p className="font-serif text-sm tracking-[0.2em] text-[color:var(--accent)] pt-2">
+                        {num}
+                      </p>
+                      <div>
+                        <h3
+                          className="font-serif italic leading-tight text-slate-900"
+                          style={{
+                            fontSize: "clamp(1.4rem, 2.5vw, 1.9rem)",
+                            fontVariationSettings: '"opsz" 144, "SOFT" 40, "WONK" 0',
+                            letterSpacing: "-0.015em",
+                          }}
+                        >
+                          {label}
+                        </h3>
+                        <p className="mt-2 text-sm leading-relaxed text-slate-500">{description}</p>
+                      </div>
+                    </div>
+                  </ScrollReveal>
+                ))}
+              </div>
+            </div>
           </div>
         </Container>
       </section>
 
       {/* Inquiry CTA — closing strip */}
-      <section className="relative overflow-hidden bg-[color:var(--accent)] py-20 sm:py-24">
+      <section className="relative -mb-20 overflow-hidden bg-[color:var(--accent)] py-20 sm:py-24">
         <svg
           className="pointer-events-none absolute inset-0 h-full w-full"
           viewBox="0 0 1440 240"

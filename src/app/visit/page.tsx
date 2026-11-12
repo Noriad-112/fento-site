@@ -58,14 +58,14 @@ export default function VisitPage() {
       />
 
       {/* Hero */}
-      <HeroBanner>
+      <HeroBanner compact>
         <p className="animate-fade-up text-[10px] uppercase tracking-[0.4em] text-white/40">
           Find us
         </p>
         <h1
           className="animate-fade-up delay-100 mt-4 font-serif italic leading-[1.04] text-white"
           style={{
-            fontSize: "clamp(2.6rem, 7vw, 6.5rem)",
+            fontSize: "clamp(2.4rem, 5.5vw, 4.75rem)",
             fontVariationSettings: '"opsz" 144, "SOFT" 60, "WONK" 0',
             letterSpacing: "-0.025em",
           }}
@@ -157,7 +157,7 @@ export default function VisitPage() {
       })}
 
       {/* Closing strip */}
-      <section className="relative overflow-hidden bg-[color:var(--accent)] py-20 sm:py-24">
+      <section className="relative -mb-20 overflow-hidden bg-[color:var(--accent)] py-20 sm:py-24">
         <svg
           className="pointer-events-none absolute inset-0 h-full w-full"
           viewBox="0 0 1440 240"

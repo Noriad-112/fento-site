@@ -5,11 +5,14 @@ import { Container } from "@/components/ui/Container";
 type HeroBannerProps = {
   children: ReactNode;
   className?: string;
+  /** Shorter banner, for pages where the content below should show sooner */
+  compact?: boolean;
 };
 
-export function HeroBanner({ children, className }: HeroBannerProps) {
+export function HeroBanner({ children, className, compact = false }: HeroBannerProps) {
+  const padding = compact ? "py-12 sm:py-16" : "py-16 sm:py-24";
   return (
-    <section className={`relative overflow-hidden bg-[color:var(--accent)] py-16 sm:py-24 ${className ?? ""}`}>
+    <section className={`relative overflow-hidden bg-[color:var(--accent)] ${padding} ${className ?? ""}`}>
       <svg
         className="pointer-events-none absolute inset-0 h-full w-full"
         viewBox="0 0 1440 280"
