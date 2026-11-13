@@ -13,9 +13,10 @@ const euroFormatter = new Intl.NumberFormat("nl-NL", {
 
 const sectionPhotos: Record<string, { src: string; position?: string }> = {
   Bowls:          { src: "/photos/bowl-overhead.jpg",    position: "center 50%" },
-  Nachos:         { src: "/photos/nachos-bowl.jpg",      position: "center 50%" },
+  Nachos:         { src: "/photos/nachos-overhead.jpg",      position: "center 50%" },
   Burritos:       { src: "/photos/burrito-plate.jpg",    position: "center 40%" },
   Quesadillas:    { src: "/photos/quesadilla-plate.jpg", position: "center 50%" },
+  Arepas:         { src: "/photos/arepa-plate.jpg",      position: "center 55%" },
   Extra:          { src: "/photos/salsa-verde.jpg",      position: "center 40%" },
   "Fresh Juices": { src: "/photos/hibiscus-drink.png",   position: "center 40%" },
 };
@@ -143,9 +144,12 @@ export function MenuScroll() {
                             <span className="font-serif text-lg text-slate-900 transition-colors duration-150 group-hover/item:text-[color:var(--accent)]">
                               {item.name}
                             </span>
-                            <span className="shrink-0 tabular-nums text-sm text-slate-500">
-                              {euroFormatter.format(item.price)}
-                            </span>
+                            {!item.hidePrice && (
+                              <span className="shrink-0 tabular-nums text-sm text-slate-500">
+                                {item.pricePrefix ? `${item.pricePrefix} ` : ""}
+                                {euroFormatter.format(item.price)}
+                              </span>
+                            )}
                           </div>
                           {item.details && (
                             <p className="mt-0.5 text-sm leading-relaxed text-slate-500">

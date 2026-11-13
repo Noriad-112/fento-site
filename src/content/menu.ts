@@ -75,7 +75,7 @@ export const menu = {
     {
       title: "Nachos",
       description:
-        "Tortilla chips with homemade toppings and a choice of plant-based or free range chicken variations.",
+        "Tortilla chips with homemade toppings and a choice of plant-based or chicken variations.",
       items: [
         {
           name: "Regular Nachos",
@@ -96,17 +96,17 @@ export const menu = {
             "Tortilla chips, black beans, sweet potato, red salsa, cashew crema, pickles, coriander.",
         },
         {
-          name: "Free Range Chicken Nacho",
+          name: "Chicken Nacho",
           price: 16.5,
           details:
-            "Tortilla chips, black beans, free range chicken, red salsa, cashew crema, pickles, coriander.",
+            "Tortilla chips, black beans, chicken, red salsa, cashew crema, pickles, coriander.",
         },
       ],
     },
     {
       title: "Burritos",
       description:
-        "Warm burrito options with vegetarian, vegan, mushroom, or free-range chicken fillings.",
+        "Warm burrito options with vegetarian, vegan, mushroom, or chicken fillings.",
       items: [
         {
           name: "Vegetarian",
@@ -127,10 +127,10 @@ export const menu = {
             "Burrito base with shiitake mushrooms, jalapeno, bell pepper, oregano, zaatar, and onion.",
         },
         {
-          name: "Free Range Chicken",
+          name: "Chicken",
           price: 16.0,
           details:
-            "Burrito base with marinated free range chicken, lime juice, paprika, oregano, sunflower oil, and salt.",
+            "Burrito base with marinated chicken, lime juice, paprika, oregano, sunflower oil, and salt.",
         },
       ],
     },
@@ -158,10 +158,40 @@ export const menu = {
             "Local organic corn tortilla, locally grown shiitake mushrooms, and cheese or vegan cheese.",
         },
         {
-          name: "Free Range Chicken",
+          name: "Chicken",
           price: 13.5,
           details:
-            "Local organic corn tortilla, free range chicken, and cheese or vegan cheese.",
+            "Local organic corn tortilla, chicken, and cheese or vegan cheese.",
+        },
+      ],
+    },
+    {
+      title: "Arepas",
+      description:
+        "Corn arepas from €4, built your way with the toppings you like.",
+      items: [
+        {
+          name: "Arepa",
+          price: 4.0,
+          pricePrefix: "from",
+          details: "Corn arepa, built your way with the toppings below.",
+        },
+        {
+          name: "€1,00 toppings",
+          price: 1.0,
+          hidePrice: true,
+          details: "Beans, rice, salad, pico de gallo, sweet potato.",
+        },
+        {
+          name: "€2,00 toppings",
+          price: 2.0,
+          hidePrice: true,
+          details: "Chicken, guacamole, mushrooms.",
+        },
+        {
+          name: "Kids Combo",
+          price: 9.0,
+          details: "Cheese quesadilla or arepa + drink.",
         },
       ],
     },
@@ -174,7 +204,7 @@ export const menu = {
         { name: "Chips & Guac", price: 7.5, details: "" },
         { name: "Guacamole", price: 3.0, details: "" },
         { name: "Mango Hot Sauce", price: 2.0, details: "" },
-        { name: "Free Range Chicken", price: 4.0, details: "" },
+        { name: "Chicken", price: 4.0, details: "" },
       ],
     },
     {

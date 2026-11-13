@@ -13,7 +13,7 @@ const euroFormatter = new Intl.NumberFormat("nl-NL", {
 
 const sectionPhotos: Record<string, string> = {
   Bowls: "/photos/bowl-overhead.jpg",
-  Nachos: "/photos/nachos-bowl.jpg",
+  Nachos: "/photos/nachos-overhead.jpg",
   Burritos: "/photos/burrito-plate.jpg",
   Quesadillas: "/photos/quesadilla-plate.jpg",
   Extra: "/photos/salsa-verde.jpg",
