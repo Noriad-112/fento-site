@@ -65,7 +65,7 @@ export function HomeHero() {
       <Container className="relative">
         {/* Eyebrow */}
         <p className="animate-fade-in text-[10px] uppercase tracking-[0.4em] text-[color:var(--pop)]">
-          Amsterdam · Foodhallen · Mexican fusion
+          Amsterdam · Foodhallen<span className="hidden sm:inline"> · </span><span className="block sm:inline">Mexican fusion</span>
         </p>
 
         {/* Giant stacked headline — each line clips from below */}

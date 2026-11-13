@@ -38,9 +38,9 @@ export default function MenuPage() {
         >
           Menu
         </h1>
-        <div className="animate-fade-up delay-300 mt-8 flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-white/10 pt-6">
+        <div className="animate-fade-up delay-300 mt-8 flex flex-col gap-1.5 border-t border-white/10 pt-6 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6">
           {site.pages.menu.dietaryClarity.map((item) => (
-            <span key={item} className="text-xs text-white/50">
+            <span key={item} className="flex items-center gap-2 text-xs text-white/60"><span aria-hidden className="h-1 w-1 rounded-full bg-[color:var(--pop)]" />
               {item}
             </span>
           ))}
@@ -71,7 +71,7 @@ export default function MenuPage() {
               </p>
               <div className="pillar-desc-wrap">
                 <div className="overflow-hidden">
-                  <p className="pt-2 text-sm leading-relaxed text-slate-400 opacity-0 transition-opacity delay-75 duration-150 group-hover:opacity-100 max-sm:opacity-100">
+                  <p className="pt-2 text-sm leading-relaxed text-slate-500 opacity-0 transition-opacity delay-75 duration-150 group-hover:opacity-100 max-sm:opacity-100">
                     {sauce.ingredients}
                   </p>
                 </div>
@@ -79,7 +79,7 @@ export default function MenuPage() {
             </div>
           ))}
         </div>
-        <p className="mt-6 text-xs text-slate-400">{menu.note}</p>
+        <p className="mt-6 text-xs text-slate-500">{menu.note}</p>
       </Section>
     </>
   );

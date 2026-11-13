@@ -111,8 +111,8 @@ export default function CateringPage() {
                           className="font-serif italic leading-tight text-slate-900"
                           style={{
                             fontSize: "clamp(1.4rem, 2.5vw, 1.9rem)",
-                            fontVariationSettings: '"opsz" 144, "SOFT" 40, "WONK" 0',
-                            letterSpacing: "-0.015em",
+                            fontVariationSettings: '"opsz" 72, "SOFT" 40, "WONK" 0',
+                            letterSpacing: "0",
                           }}
                         >
                           {label}
@@ -129,7 +129,7 @@ export default function CateringPage() {
       </section>
 
       {/* Inquiry CTA — closing strip */}
-      <section className="relative -mb-20 overflow-hidden bg-[color:var(--accent)] py-20 sm:py-24">
+      <section className="relative overflow-hidden bg-[color:var(--accent)] py-20 sm:py-24">
         <svg
           className="pointer-events-none absolute inset-0 h-full w-full"
           viewBox="0 0 1440 240"
@@ -152,8 +152,8 @@ export default function CateringPage() {
               className="font-serif italic leading-tight text-white/90 max-w-2xl"
               style={{
                 fontSize: "clamp(1.6rem, 3.8vw, 3.2rem)",
-                fontVariationSettings: '"opsz" 144, "SOFT" 60, "WONK" 0',
-                letterSpacing: "-0.02em",
+                fontVariationSettings: '"opsz" 96, "SOFT" 60, "WONK" 0',
+                letterSpacing: "-0.005em",
               }}
             >
               Tell us your date, group size,<br />and any dietary needs.

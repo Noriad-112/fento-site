@@ -148,7 +148,7 @@ export function MenuScroll() {
                             </span>
                           </div>
                           {item.details && (
-                            <p className="mt-0.5 text-sm leading-relaxed text-slate-400">
+                            <p className="mt-0.5 text-sm leading-relaxed text-slate-500">
                               {item.details}
                             </p>
                           )}

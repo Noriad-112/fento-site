@@ -157,7 +157,7 @@ export default function VisitPage() {
       })}
 
       {/* Closing strip */}
-      <section className="relative -mb-20 overflow-hidden bg-[color:var(--accent)] py-20 sm:py-24">
+      <section className="relative overflow-hidden bg-[color:var(--accent)] py-20 sm:py-24">
         <svg
           className="pointer-events-none absolute inset-0 h-full w-full"
           viewBox="0 0 1440 240"
@@ -181,8 +181,8 @@ export default function VisitPage() {
               className="font-serif italic leading-tight text-white/90 max-w-2xl"
               style={{
                 fontSize: "clamp(1.6rem, 3.8vw, 3.2rem)",
-                fontVariationSettings: '"opsz" 144, "SOFT" 60, "WONK" 0',
-                letterSpacing: "-0.02em",
+                fontVariationSettings: '"opsz" 96, "SOFT" 60, "WONK" 0',
+                letterSpacing: "-0.005em",
               }}
             >
               &ldquo;Same sauces. Same standards. Two ways to find us.&rdquo;

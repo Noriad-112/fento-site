@@ -137,8 +137,8 @@ export default function StoryPage() {
                     className="font-serif italic leading-tight text-slate-900"
                     style={{
                       fontSize: "clamp(1.4rem, 2.5vw, 1.9rem)",
-                      fontVariationSettings: '"opsz" 144, "SOFT" 40, "WONK" 0',
-                      letterSpacing: "-0.015em",
+                      fontVariationSettings: '"opsz" 72, "SOFT" 40, "WONK" 0',
+                      letterSpacing: "0",
                     }}
                   >
                     {headline}
@@ -181,8 +181,8 @@ export default function StoryPage() {
               className="font-serif italic leading-tight text-white/90 max-w-2xl"
               style={{
                 fontSize: "clamp(1.6rem, 3.8vw, 3.2rem)",
-                fontVariationSettings: '"opsz" 144, "SOFT" 60, "WONK" 0',
-                letterSpacing: "-0.02em",
+                fontVariationSettings: '"opsz" 96, "SOFT" 60, "WONK" 0',
+                letterSpacing: "-0.005em",
               }}
             >
               &ldquo;Designed vegan from the start. Built for everyone.&rdquo;
